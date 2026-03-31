@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI & Claude: Prompty a Best Practices</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Plynulé přechody pro tlačítka a odkazy */
+        .copy-btn, .nav-link {
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Aktivní stav navigace (řešeno přes JS, ale styly zde) */
+        .nav-link.active {
+            color: #4f46e5; /* indigo-600 */
+            font-weight: 600;
+            border-left-color: #4f46e5;
+            background-color: #eef2ff; /* indigo-50 */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 flex flex-col lg:flex-row gap-8 lg:gap-12">
+        
+        <!-- Levý panel - Navigace (Obsah) -->
+        <aside class="lg:w-1/4 shrink-0">
+            <div class="sticky top-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-lg font-bold text-slate-900 mb-4 uppercase tracking-wide text-sm border-b pb-2">Obsah knihovny</h2>
+                <nav class="flex flex-col space-y-1" id="toc-nav">
+                    <a href="#best-practices" class="nav-link block px-3 py-2 text-sm text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded border-l-2 border-transparent">Best Practices</a>
+                    
+                    <div class="pt-3 pb-1">
+                        <span class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">Statické Prompty</span>
+                    </div>
+                    <a href="#prompt-1" class="nav-link block px-3 py-2 text-sm text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded border-l-2 border-transparent">1. Kalendářní tabulka</a>
+                    <a href="#prompt-2" class="nav-link block px-3 py-2 text-sm text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded border-l-2 border-transparent">2. Time Intelligence</a>
+                    <a href="#prompt-3" class="nav-link block px-3 py-2 text-sm text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded border-l-2 border-transparent">3. Úklid názvů</a>
+                    <a href="#prompt-4" class="nav-link block px-3 py-2 text-sm text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded border-l-2 border-transparent">4. Optimalizace DAX</a>
+                    <a href="#prompt-5" class="nav-link block px-3 py-2 text-sm text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded border-l-2 border-transparent">5. Power Query API</a>
+                    <a href="#prompt-6" class="nav-link block px-3 py-2 text-sm text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded border-l-2 border-transparent">6. Dynamické RLS</a>
+                    <a href="#prompt-7" class="nav-link block px-3 py-2 text-sm text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded border-l-2 border-transparent">7. Návrh Star Schema</a>
+                    <a href="#prompt-8" class="nav-link block px-3 py-2 text-sm text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded border-l-2 border-transparent">8. Dynamická segmentace</a>
+
+                    <div class="pt-3 pb-1">
+                        <span class="px-3 text-xs font-semibold text-emerald-500 uppercase tracking-wider">Začínáme</span>
+                    </div>
+                    <a href="#setup" class="nav-link block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded border-l-2 border-transparent">🚀 Rychlý Setup (Nástroje)</a>
+
+                    <div class="pt-3 pb-1">
+                        <span class="px-3 text-xs font-semibold text-red-400 uppercase tracking-wider">Tutoriály</span>
+                    </div>
+                    <a href="#video-setup" class="nav-link block px-3 py-2 text-sm text-slate-600 hover:text-red-600 hover:bg-red-50 rounded border-l-2 border-transparent">▶️ Video: Jak na setup</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Hlavní obsah -->
+        <main class="lg:w-3/4">
+            
+            <!-- Hlavička -->
+            <header class="mb-10">
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">Knihovna promptů pro <span class="text-indigo-600">Claude</span></h1>
+                <p class="text-slate-600 text-lg md:text-xl leading-relaxed">Zefektivněte svou práci v Power BI pomocí těchto ověřených příkazů připravených přímo pro AI asistenta Claude.</p>
+            </header>
+
+            <!-- Best Practices Sekce -->
+            <section id="best-practices" class="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-6 md:p-8 mb-12 shadow-sm scroll-mt-8">
+                <h2 class="text-2xl font-bold text-blue-900 mb-4 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                    Zlatá pravidla (Best Practices)
+                </h2>
+                <p class="text-blue-800 mb-4 text-lg">
+                    Než svěříte Claudeovi úpravy vašeho datového modelu, vždy postupujte obezřetně:
+                </p>
+                <ul class="space-y-4 text-blue-800">
+                    <li class="flex items-start gap-3 bg-white/50 p-4 rounded-lg">
+                        <svg class="w-6 h-6 text-blue-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div><strong>Vždy žádejte o plán:</strong> Přidejte ke svému promptu instrukci, ať Claude nejprve navrhne postup. <em>(Např.: "Nejprve mi prosím napiš krok za krokem plán toho, co přesně se chystáš udělat.")</em></div>
+                    </li>
+                    <li class="flex items-start gap-3 bg-white/50 p-4 rounded-lg">
+                        <svg class="w-6 h-6 text-blue-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div><strong>Vyžadujte schválení:</strong> Zakázejte agentovi psát finální kód, dokud mu jeho plán výslovně neodsouhlasíte.</div>
+                    </li>
+                    <li class="flex items-start gap-3 bg-white/50 p-4 rounded-lg">
+                        <svg class="w-6 h-6 text-blue-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div><strong>Testujte postupně:</strong> Plný přístup a komplexní úkoly zadávejte až po odzkoušení na menších částech modelu.</div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Sekce Pevných Promptů -->
+            <div class="space-y-12 mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 border-b-2 border-slate-200 pb-3">Osvědčené statické prompty</h2>
+
+                <!-- Prompt 1 -->
+                <section id="prompt-1" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 scroll-mt-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-slate-800 mb-4">1. Vygenerování komplexní kalendářní tabulky</h3>
+                    <div class="relative bg-[#1e1e1e] text-gray-300 rounded-xl mb-4 shadow-inner">
+                        <button onclick="copyPrompt(this)" class="copy-btn absolute top-3 right-3 bg-[#333333] hover:bg-[#4a4a4a] text-gray-200 border border-gray-600 text-sm px-3 py-1.5 rounded flex items-center gap-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span>Kopírovat</span>
+                        </button>
+                        <pre class="font-mono text-sm leading-relaxed whitespace-pre-wrap p-5 pr-32"><code>Create a comprehensive DAX Date table. Include columns for Date, Year, Quarter, Month Name, Month Number, Week Number, and Day of Week. Add a boolean column for IsWorkingDay (assuming Monday-Friday). Before generating the code, please outline your plan for my approval.</code></pre>
+                    </div>
+                    <p class="text-slate-500 text-sm md:text-base">Základní stavební kámen pro Time Intelligence funkce. Vytvoří plně funkční kalendář propojitelný s vašimi fakty.</p>
+                </section>
+
+                <!-- Prompt 2 -->
+                <section id="prompt-2" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 scroll-mt-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-slate-800 mb-4">2. Tvorba sady základních Time Intelligence měřítek</h3>
+                    <div class="relative bg-[#1e1e1e] text-gray-300 rounded-xl mb-4 shadow-inner">
+                        <button onclick="copyPrompt(this)" class="copy-btn absolute top-3 right-3 bg-[#333333] hover:bg-[#4a4a4a] text-gray-200 border border-gray-600 text-sm px-3 py-1.5 rounded flex items-center gap-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span>Kopírovat</span>
+                        </button>
+                        <pre class="font-mono text-sm leading-relaxed whitespace-pre-wrap p-5 pr-32"><code>Based on the existing measure [Total Sales], generate standard time intelligence measures including: YTD, QTD, MTD, Previous Year (PY), YoY variance in absolute numbers, and YoY variance percentage. Please explain your approach before writing the DAX.</code></pre>
+                    </div>
+                    <p class="text-slate-500 text-sm md:text-base">Ušetří spoustu manuálního psaní. Rychle vygeneruje všechny obvyklé metriky pro porovnávání v čase.</p>
+                </section>
+
+                <!-- Prompt 3 -->
+                <section id="prompt-3" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 scroll-mt-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-slate-800 mb-4">3. Přejmenování polí pro konzistenci (Úklid názvů)</h3>
+                    <div class="relative bg-[#1e1e1e] text-gray-300 rounded-xl mb-4 shadow-inner">
+                        <button onclick="copyPrompt(this)" class="copy-btn absolute top-3 right-3 bg-[#333333] hover:bg-[#4a4a4a] text-gray-200 border border-gray-600 text-sm px-3 py-1.5 rounded flex items-center gap-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span class="btn-text">Kopírovat</span>
+                        </button>
+                        <pre class="font-mono text-sm leading-relaxed whitespace-pre-wrap p-5 pr-32"><code>Analyze naming conventions across all tables and columns. Rename fields for consistency, fix casing (e.g. Title Case), and remove unnecessary prefixes. Ensure all DAX measures update accordingly. Show me the mapping of old names to new names for my approval before executing.</code></pre>
+                    </div>
+                    <p class="text-slate-500 text-sm md:text-base">Velmi užitečné pro surová data (např. převod "dim_product_name" na "Product Name").</p>
+                </section>
+
+                <!-- Prompt 4 -->
+                <section id="prompt-4" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 scroll-mt-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-slate-800 mb-4">4. Optimalizace výkonu DAX měřítka</h3>
+                    <div class="relative bg-[#1e1e1e] text-gray-300 rounded-xl mb-4 shadow-inner">
+                        <button onclick="copyPrompt(this)" class="copy-btn absolute top-3 right-3 bg-[#333333] hover:bg-[#4a4a4a] text-gray-200 border border-gray-600 text-sm px-3 py-1.5 rounded flex items-center gap-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span class="btn-text">Kopírovat</span>
+                        </button>
+                        <pre class="font-mono text-sm leading-relaxed whitespace-pre-wrap p-5 pr-32"><code>Review the following DAX measure for performance bottlenecks. Suggest an optimized version using variables (VAR) and efficient filter context evaluation (e.g., avoiding FILTER on whole tables). Explain the performance improvements in your plan before outputting the final DAX.
+[INSERT YOUR DAX HERE]</code></pre>
+                    </div>
+                    <p class="text-slate-500 text-sm md:text-base">Skvělé, když se vám načítají vizuály pomalu. Claude najde zbytečné iterace a navrhne rychlejší výpočet.</p>
+                </section>
+
+                <!-- Prompt 5 -->
+                <section id="prompt-5" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 scroll-mt-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-slate-800 mb-4">5. M kód: Paginace API přes Power Query</h3>
+                    <div class="relative bg-[#1e1e1e] text-gray-300 rounded-xl mb-4 shadow-inner">
+                        <button onclick="copyPrompt(this)" class="copy-btn absolute top-3 right-3 bg-[#333333] hover:bg-[#4a4a4a] text-gray-200 border border-gray-600 text-sm px-3 py-1.5 rounded flex items-center gap-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span class="btn-text">Kopírovat</span>
+                        </button>
+                        <pre class="font-mono text-sm leading-relaxed whitespace-pre-wrap p-5 pr-32"><code>Create a Power Query M function that takes a dynamic API URL and a bearer token as parameters. It needs to handle pagination using the 'next_page' URL provided in the API JSON response, and return a combined table of all results. Outline the steps and logic for my approval before writing the M code.</code></pre>
+                    </div>
+                    <p class="text-slate-500 text-sm md:text-base">Záchrana při stahování dat z REST API, které vrací výsledky po stránkách (např. po 100 záznamech).</p>
+                </section>
+
+                <!-- Prompt 6 -->
+                <section id="prompt-6" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 scroll-mt-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-slate-800 mb-4">6. Dynamické Row-Level Security (RLS)</h3>
+                    <div class="relative bg-[#1e1e1e] text-gray-300 rounded-xl mb-4 shadow-inner">
+                        <button onclick="copyPrompt(this)" class="copy-btn absolute top-3 right-3 bg-[#333333] hover:bg-[#4a4a4a] text-gray-200 border border-gray-600 text-sm px-3 py-1.5 rounded flex items-center gap-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span class="btn-text">Kopírovat</span>
+                        </button>
+                        <pre class="font-mono text-sm leading-relaxed whitespace-pre-wrap p-5 pr-32"><code>Design a dynamic Row-Level Security (RLS) DAX expression for the 'Sales' table. Users should only see data for their assigned Region based on the 'UserSecurity' table (matching USERPRINCIPALNAME()). Account for managers who have a '*' indicating access to all regions. Provide the plan and DAX logic for approval first.</code></pre>
+                    </div>
+                    <p class="text-slate-500 text-sm md:text-base">Řeší běžný bezpečnostní požadavek, kdy řadový zaměstnanec vidí jen svá data a manažer vidí vše.</p>
+                </section>
+
+                <!-- Prompt 7 -->
+                <section id="prompt-7" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 scroll-mt-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-slate-800 mb-4">7. Návrh datového modelu (Star Schema)</h3>
+                    <div class="relative bg-[#1e1e1e] text-gray-300 rounded-xl mb-4 shadow-inner">
+                        <button onclick="copyPrompt(this)" class="copy-btn absolute top-3 right-3 bg-[#333333] hover:bg-[#4a4a4a] text-gray-200 border border-gray-600 text-sm px-3 py-1.5 rounded flex items-center gap-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span class="btn-text">Kopírovat</span>
+                        </button>
+                        <pre class="font-mono text-sm leading-relaxed whitespace-pre-wrap p-5 pr-32"><code>Analyze the following list of raw flat tables and their columns. Propose an optimal Star Schema design. Identify which tables should be Fact tables and which should be Dimensions. Suggest the necessary relationships (1-to-many) and surrogate keys. Present your structural plan for my approval.
+[INSERT TABLES/COLUMNS HERE]</code></pre>
+                    </div>
+                    <p class="text-slate-500 text-sm md:text-base">Zásadní prompt při startu nového reportu. Nechte Claudea promyslet strukturu (fakta vs. dimenze) ze surových dat.</p>
+                </section>
+
+                <!-- Prompt 8 -->
+                <section id="prompt-8" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 scroll-mt-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-slate-800 mb-4">8. Dynamická segmentace zákazníků</h3>
+                    <div class="relative bg-[#1e1e1e] text-gray-300 rounded-xl mb-4 shadow-inner">
+                        <button onclick="copyPrompt(this)" class="copy-btn absolute top-3 right-3 bg-[#333333] hover:bg-[#4a4a4a] text-gray-200 border border-gray-600 text-sm px-3 py-1.5 rounded flex items-center gap-2 z-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span class="btn-text">Kopírovat</span>
+                        </button>
+                        <pre class="font-mono text-sm leading-relaxed whitespace-pre-wrap p-5 pr-32"><code>Write a DAX measure to dynamically segment customers based on their total sales into 'High', 'Medium', and 'Low' tiers using a disconnected 'Segmentation Parameters' table with Min and Max columns. The measure should count the number of customers in each tier. Explain the logic for approval before outputting code.</code></pre>
+                    </div>
+                    <p class="text-slate-500 text-sm md:text-base">Pokročilý DAX vzorec, který umožní interaktivně rozdělovat zákazníky nebo produkty do skupin (např. ABC analýza).</p>
+                </section>
+            </div>
+
+            <!-- Setup Nástrojů Sekce -->
+            <section id="setup" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 scroll-mt-8 mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    Rychlý Setup: Krok za krokem k automatizaci
+                </h2>
+                <p class="text-slate-600 text-lg mb-8">
+                    Pro propojení Claude s vašimi lokálními daty a Power BI projekty pomocí MCP si postupně projděte těchto 6 kroků. Vše naklikáte za pár minut.
+                </p>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Krok 1 -->
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col h-full hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">1. Visual Studio Code</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Stáhněte si základní editor. Bude fungovat jako most pro lokální běh serverů.</p>
+                        <a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreferrer" class="text-center w-full bg-white hover:bg-blue-50 text-blue-600 border border-blue-200 font-medium py-2 px-4 rounded-lg transition-colors text-sm shadow-sm">
+                            Stáhnout VS Code
+                        </a>
+                    </div>
+
+                    <!-- Krok 2 -->
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col h-full hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-[#f0ede6] text-[#d97757] rounded-lg flex items-center justify-center mb-4">
+                            <!-- Custom ikona reprezentující styl Claude -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 19.5C16.5 21 14.5 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C14.5 2 16.5 3 18 4.5"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">2. Claude Desktop</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Stáhněte si aplikaci do PC. Webová verze lokální MCP připojení nepodporuje.</p>
+                        <a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer" class="text-center w-full bg-white hover:bg-orange-50 text-[#d97757] border border-orange-200 font-medium py-2 px-4 rounded-lg transition-colors text-sm shadow-sm">
+                            Stáhnout Claude
+                        </a>
+                    </div>
+
+                    <!-- Krok 3 -->
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col h-full hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" x2="12" y1="22" y2="12"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">3. MCP Rozšíření</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Otevřete VS Code, jděte do Extensions (Rozšíření) a nainstalujte si MCP Server rozšíření.</p>
+                        <button disabled class="text-center w-full bg-gray-100 text-gray-500 border border-gray-200 font-medium py-2 px-4 rounded-lg text-sm cursor-default">
+                            Vyhledat ve VS Code
+                        </button>
+                    </div>
+
+                    <!-- Krok 4 -->
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col h-full hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-lg flex items-center justify-center mb-4 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">4. Zkopírovat Kód</h3>
+                        <p class="text-slate-600 text-[13px] mb-3 leading-tight">Najděte cestu k instalaci ve VS Code (např. <code>%USERPROFILE%\.vscode\extensions</code>). Zkopírujte JSON a doplňte vlastní jméno (pozor na dvojitá lomítka <code>\\</code>):</p>
+                        <div class="relative bg-[#1e1e1e] text-gray-300 rounded-lg shadow-inner flex-grow overflow-hidden">
+                            <button onclick="copyPrompt(this)" class="copy-btn absolute top-2 right-2 bg-[#333333] hover:bg-[#4a4a4a] text-gray-200 border border-gray-600 text-[10px] px-2 py-1 rounded flex items-center gap-1 z-10" title="Kopírovat">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                <span>Kopírovat</span>
+                            </button>
+                            <pre class="font-mono text-[11px] leading-relaxed overflow-x-auto p-3 pt-8 h-full"><code>{
+  "mcpServers": {
+    "powerbi-modeling-mcp": {
+      "command": "C:\\Users\\TvojeJmeno\\.vscode\\extensions\\analysis-services.powerbi-modeling-mcp-0.1.9-win32-x64\\server\\powerbi-modeling-mcp.exe",
+      "args": ["--start"],
+      "type": "stdio"
+    }
+  }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Krok 5 -->
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col h-full hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-slate-200 text-slate-700 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">5. Nastavení Claude</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">V aplikaci Claude jděte do <span class="font-bold">Settings > Developer</span> a zkopírovaný kód vložte do konfiguračního souboru.</p>
+                        <button disabled class="text-center w-full bg-gray-100 text-gray-500 border border-gray-200 font-medium py-2 px-4 rounded-lg text-sm cursor-default">
+                            Uložit soubor
+                        </button>
+                    </div>
+
+                    <!-- Krok 6 -->
+                    <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-200 flex flex-col h-full hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-emerald-600 text-white rounded-lg flex items-center justify-center mb-4 shadow-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-emerald-900 mb-2">6. Restart a je hotovo!</h3>
+                        <p class="text-emerald-700 text-sm mb-6 flex-grow">Nejlepší rada IT oddělení: <span class="font-bold">Vypněte a zapněte celý počítač!</span> Tím se všechny služby spolehlivě propojí a už to frčí.</p>
+                        <button disabled class="text-center w-full bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg text-sm shadow-sm cursor-default">
+                            Můžete začít pracovat 🎉
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Návod Sekce -->
+            <section id="video-setup" class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 scroll-mt-8 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
+                    Video Návod: Jak na setup
+                </h2>
+                <p class="text-slate-600 text-lg mb-6">
+                    Nevíte si rady s počátečním nastavením? Podívejte se na názornou ukázku a postup přímo na YouTube (video se spustí přesně v čase 14:49).
+                </p>
+                
+                <a href="https://www.youtube.com/watch?v=jDSoSJz4ams&t=889s" target="_blank" rel="noopener noreferrer" class="inline-flex bg-red-600 hover:bg-red-700 text-white text-base font-medium py-3 px-6 rounded-xl items-center gap-2 transition-colors shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                    Přehrát video na YouTube
+                </a>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Skripty pro funkcionalitu -->
+    <script>
+        // --- HIGHLIGHT AKTIVNÍ POLOŽKY V MENU PŘI SCROLLOVÁNÍ ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // Detekce pokud jsme zhruba v oblasti sekce (s malým odsazením)
+                    if (scrollY >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current) && current !== '') {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // --- LOGIKA KOPÍROVÁNÍ ---
+        function changeCopyButtonState(button) {
+            const originalHTML = button.innerHTML;
+            button.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="text-green-400">Zkopírováno</span>
+            `;
+            button.classList.add('border-green-500', 'bg-[#2a3f2d]');
+
+            setTimeout(() => {
+                button.innerHTML = originalHTML;
+                button.classList.remove('border-green-500', 'bg-[#2a3f2d]');
+            }, 2000);
+        }
+
+        function copyPrompt(button) {
+            const preElement = button.parentElement.querySelector('pre');
+            navigator.clipboard.writeText(preElement.innerText)
+                .then(() => changeCopyButtonState(button))
+                .catch(err => console.error('Nepodařilo se zkopírovat: ', err));
+        }
+    </script>
+</body>
+</html>
