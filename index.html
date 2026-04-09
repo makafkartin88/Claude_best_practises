@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Agent + Power BI: Prompty a Integrace</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
         tailwind.config = {
@@ -20,19 +19,6 @@
     </script>
 
     <style>
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container { height: 350px; }
-        }
-
         .fade-in {
             animation: fadeIn 0.4s ease-in-out forwards;
         }
@@ -132,37 +118,46 @@
                 <p class="text-xl text-slate-500 font-medium text-balance">Konfigurace Model Context Protocol (MCP) a napojení Claudea na sémantický model PBI.</p>
             </div>
 
-            <div class="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <div class="space-y-6">
-                        <h2 class="text-3xl font-bold text-slate-900">Zlom v efektivitě</h2>
-                        <p class="text-slate-600 leading-relaxed text-lg">Konec manuálního psaní repetitivního DAXu a přejmenovávání sloupců. Tento most vytváří přímé spojení mezi uvažováním umělé inteligence a tabulkovým modelem Power BI.</p>
-                        
-                        <div class="space-y-4 pt-4">
-                            <div class="flex items-center p-4 bg-slate-50 rounded-2xl border border-slate-100 hover:border-primary transition-colors">
-                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl mr-4">🧠</div>
-                                <div><p class="font-bold text-slate-900 leading-tight">AI Agent</p><p class="text-xs text-slate-400">Claude Desktop / Cline</p></div>
-                            </div>
-                            <div class="flex justify-center h-4"><div class="w-0.5 bg-slate-200"></div></div>
-                            <div class="flex items-center p-4 bg-slate-50 rounded-2xl border border-slate-100 hover:border-primary transition-colors">
-                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl mr-4">⚙️</div>
-                                <div><p class="font-bold text-slate-900 leading-tight">MCP Server</p><p class="text-xs text-slate-400">powerbi-modeling-mcp.exe</p></div>
-                            </div>
-                            <div class="flex justify-center h-4"><div class="w-0.5 bg-slate-200"></div></div>
-                            <div class="flex items-center p-4 bg-slate-50 rounded-2xl border border-slate-100 hover:border-primary transition-colors">
-                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl mr-4">📊</div>
-                                <div><p class="font-bold text-slate-900 leading-tight">Power BI</p><p class="text-xs text-slate-400">Otevřený .pbix soubor</p></div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="max-w-lg mx-auto">
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-lg space-y-3">
+                        <h3 class="font-bold text-slate-400 uppercase text-xs tracking-widest mb-5">App Stack</h3>
 
-                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                        <h3 class="text-center font-bold text-slate-400 uppercase text-xs tracking-widest mb-6">Úspora času v praxi (Minuty)</h3>
-                        <div class="chart-container">
-                            <canvas id="roiChart"></canvas>
-                        </div>
+                        <!-- Claude Desktop -->
+                        <a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 bg-slate-100 border border-slate-200 hover:border-primary hover:shadow-md rounded-2xl p-5 transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-[#DA7756]/10 flex items-center justify-center shrink-0">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#DA7756"/><path d="M8 12.5C8 10.567 9.567 9 11.5 9H14v6h-2.5C9.567 15 8 13.433 8 11.5v1z" fill="white"/><path d="M14 9h1a3 3 0 010 6h-1V9z" fill="white" opacity="0.7"/></svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="font-black text-slate-900 leading-tight">Claude Desktop</p>
+                                <p class="text-xs text-slate-400 mt-0.5">Anthropic · claude.ai/download</p>
+                            </div>
+                            <svg class="text-slate-300 group-hover:text-primary transition-colors shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+
+                        <!-- VS Code -->
+                        <a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 bg-slate-100 border border-slate-200 hover:border-primary hover:shadow-md rounded-2xl p-5 transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
+                                <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><mask id="a"><path fill="#fff" d="M70.9 4.4L37.2 36.3 15.6 19.7 6 24.9v50.2l9.6 5.2 21.6-16.6 33.7 31.9L94 88.1V11.9L70.9 4.4z"/><path d="M71 74.4L38.5 50 71 25.6v48.8z"/><path fill="#000" d="M15.6 68.7l21.4-18.8L15.6 31.3v37.4z"/></mask><path fill="#007ACC" d="M94 11.9L70.9 4.4 37.2 36.3 15.6 19.7 6 24.9v50.2l9.6 5.2 21.6-16.6 33.7 31.9L94 88.1V11.9z" mask="url(#a)"/></svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="font-black text-slate-900 leading-tight">Visual Studio Code</p>
+                                <p class="text-xs text-slate-400 mt-0.5">Microsoft · code.visualstudio.com</p>
+                            </div>
+                            <svg class="text-slate-300 group-hover:text-primary transition-colors shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+
+                        <!-- MCP Extension -->
+                        <a href="https://marketplace.visualstudio.com/items?itemName=analysis-services.powerbi-modeling-mcp" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 bg-slate-100 border border-slate-200 hover:border-primary hover:shadow-md rounded-2xl p-5 transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#83BB26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17.5h3m3 0h-3m0 0v-3m0 3v3"/></svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="font-black text-slate-900 leading-tight">Power BI Modeling MCP</p>
+                                <p class="text-xs text-slate-400 mt-0.5">VS Code Marketplace · Extension</p>
+                            </div>
+                            <svg class="text-slate-300 group-hover:text-primary transition-colors shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
                     </div>
-                </div>
             </div>
         </section>
 
@@ -323,10 +318,10 @@
                         <div class="w-12 h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center text-2xl">📊</div>
                         <h3 class="font-black text-slate-900 text-xl">Kontrola a fungování limitů</h3>
                     </div>
-                    <p class="text-slate-600 leading-relaxed">Agenti mají omezenou kapacitu zpráv a kontextu. Vaše zbývající limity najdete obvykle přímo v uživatelském rozhraní vašeho účtu, případně se ukáží jako varovný pruh v chatu při jejich docházení.</p>
+                    <p class="text-slate-600 leading-relaxed">Agenti mají omezenou kapacitu zpráv a kontextu. Vaše zbývající limity najdete v Claude Desktop přes <kbd>Settings → Usage</kbd>, případně se ukáží jako varovný pruh v chatu při jejich docházení.</p>
                     <ul class="mt-4 space-y-3 text-sm text-slate-700 font-medium">
-                        <li class="flex items-start"><span class="text-orange-500 mr-2">●</span> <div><strong>Current session (aktuální relace):</strong> Limity vázané na to, kolik dat, souborů a zpráv aktuálně "držíte" v jednom chatu.</div></li>
-                        <li class="flex items-start"><span class="text-orange-500 mr-2">●</span> <div><strong>Weekly limits (týdenní limity):</strong> Globální omezení využití modelu v daném týdnu pro váš celý účet napříč všemi chaty.</div></li>
+                        <li class="flex items-start"><span class="text-orange-500 mr-2">●</span> <div><strong>Current session:</strong> Limity vázané na to, kolik dat, souborů a zpráv aktuálně "držíte" v jednom chatu.</div></li>
+                        <li class="flex items-start"><span class="text-orange-500 mr-2">●</span> <div><strong>Weekly limits:</strong> Globální omezení využití modelu v daném týdnu pro váš celý účet napříč všemi chaty.</div></li>
                     </ul>
                 </div>
 
@@ -683,29 +678,7 @@
             }
         };
 
-        function initChart() {
-            const ctx = document.getElementById('roiChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Psaní DAXu', 'Úprava metadat', 'Dokumentace'],
-                    datasets: [
-                        { label: 'Manuální proces', data: [45, 20, 60], backgroundColor: '#e2e8f0', borderRadius: 8 },
-                        { label: 'S AI můstkem', data: [3, 1, 4], backgroundColor: '#83BB26', borderRadius: 8 }
-                    ]
-                },
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 10, font: { weight: 'bold' } } } },
-                    scales: { 
-                        y: { beginAtZero: true, grid: { color: '#f8fafc' }, title: { display: true, text: 'ČAS (MIN)', font: { weight: 'bold', size: 10 } } }, 
-                        x: { grid: { display: false } } 
-                    }
-                }
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => { appState.init(); initChart(); });
+        document.addEventListener('DOMContentLoaded', () => { appState.init(); });
     </script>
 </body>
 </html>
