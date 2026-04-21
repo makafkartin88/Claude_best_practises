@@ -103,6 +103,7 @@
                 <a href="#overview" class="hover:text-primary transition-colors">Přehled</a>
                 <a href="#best-practices" class="hover:text-primary transition-colors">Pravidla</a>
                 <a href="#setup" class="hover:text-primary transition-colors">Setup</a>
+                <a href="#tools" class="hover:text-primary transition-colors">Nástroje</a>
                 <a href="#tips" class="hover:text-primary transition-colors">Tipy</a>
                 <a href="#library" class="hover:text-primary transition-colors">Prompty</a>
             </div>
@@ -301,6 +302,90 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Claude Code & Cowork -->
+        <section id="tools" class="space-y-10 fade-in scroll-mt-24">
+            <div class="border-b border-slate-200 pb-6">
+                <h2 class="text-4xl font-black text-slate-900 italic">Chat, <span class="text-primary">Code</span> & <span class="text-primary">Cowork</span></h2>
+                <p class="text-slate-500 text-lg font-medium mt-2">Tři režimy Claude Desktop — každý na něco jiného. Přečti si, který se hodí pro tvůj případ.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-lg transition-all flex flex-col md:col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center text-2xl">⚡</div>
+                        <div>
+                            <h3 class="font-black text-slate-900 text-xl">Jak se liší a kdy použít který?</h3>
+                            <p class="text-sm text-slate-500 font-medium mt-1">Všechny tři režimy jsou v Claude Desktop — žádná extra instalace.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <!-- Chat -->
+                        <div class="bg-orange-50/60 p-6 rounded-2xl border border-orange-100 flex flex-col h-full">
+                            <h4 class="font-bold text-slate-900 text-lg mb-2 flex items-center gap-2">
+                                <span class="w-8 h-8 bg-orange-100 text-orange-500 rounded-lg flex items-center justify-center text-base">💬</span>
+                                Chat
+                            </h4>
+                            <p class="text-sm text-slate-600 mb-4">Klasický chat v Claude Desktop. Hlavní rozhraní pro práci s Power BI — přes MCP se připojuje přímo na tvůj sémantický model.</p>
+                            <ul class="space-y-2 text-sm text-slate-700 mb-6 flex-grow">
+                                <li class="flex items-center gap-2"><span class="text-orange-500 font-bold">✔</span> Propojení s Power BI přes MCP</li>
+                                <li class="flex items-center gap-2"><span class="text-orange-500 font-bold">✔</span> Tvorba a ladění DAX měřítek</li>
+                                <li class="flex items-center gap-2"><span class="text-orange-500 font-bold">✔</span> Ad-hoc analýzy a dotazy na data</li>
+                                <li class="flex items-center gap-2"><span class="text-orange-500 font-bold">✔</span> Rychlá vysvětlení a konzultace</li>
+                                <li class="flex items-start gap-2 text-slate-500 mt-2"><span class="text-slate-400">⏭</span> <em class="leading-relaxed">Kdy použít: Vše kolem Power BI, explorační analýza, jednorázové dotazy.</em></li>
+                            </ul>
+                            <div class="bg-slate-900 p-4 rounded-xl mt-auto shadow-inner">
+                                <span class="text-[10px] text-slate-400 font-bold block mb-2 uppercase tracking-widest">Příklad</span>
+                                <div class="font-mono text-white text-xs leading-relaxed break-words">"Podívej se na můj datový model a navrhni chybějící metriky pro analýzu prodeje."</div>
+                            </div>
+                        </div>
+
+                        <!-- Claude Code -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col h-full">
+                            <h4 class="font-bold text-slate-900 text-lg mb-2 flex items-center gap-2">
+                                <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-base">💻</span>
+                                Claude Code
+                            </h4>
+                            <p class="text-sm text-slate-600 mb-4">Vyberu mu složku (lokální git repo) a Claude v ní pracuje se soubory jako vývojář — čte, píše, spouští příkazy.</p>
+                            <ul class="space-y-2 text-sm text-slate-700 mb-6 flex-grow">
+                                <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">✔</span> Editace a refaktoring souborů</li>
+                                <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">✔</span> Code review a vysvětlování kódu</li>
+                                <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">✔</span> Spouštění příkazů v terminálu</li>
+                                <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">✔</span> Lokální automatizace (hooks, skripty)</li>
+                                <li class="flex items-start gap-2 text-slate-500 mt-2"><span class="text-slate-400">⏭</span> <em class="leading-relaxed">Kdy použít: Máš projekt nebo soubory a chceš, aby Claude sám procházel a upravoval kód.</em></li>
+                            </ul>
+                            <div class="bg-slate-900 p-4 rounded-xl mt-auto shadow-inner">
+                                <span class="text-[10px] text-slate-400 font-bold block mb-2 uppercase tracking-widest">Příklad</span>
+                                <div class="font-mono text-white text-xs leading-relaxed break-words">"Vytvoř DAX metriky podle souboru pozadavky.docx a po mém schválení pushni změny na git."</div>
+                            </div>
+                        </div>
+
+                        <!-- Cowork -->
+                        <div class="bg-primary/5 p-6 rounded-2xl border border-primary/20 flex flex-col h-full">
+                            <h4 class="font-bold text-slate-900 text-lg mb-2 flex items-center gap-2">
+                                <span class="w-8 h-8 bg-primary/20 text-primary rounded-lg flex items-center justify-center text-base">🤝</span>
+                                Cowork
+                            </h4>
+                            <p class="text-sm text-slate-600 mb-4">Kolaborativní multi-agent prostředí v Claude Desktop. Umožňuje sdílet kontext s týmem, spouštět opakované tasky a orchestrovat agenty pomocí pluginů.</p>
+                            <ul class="space-y-2 text-sm text-slate-700 mb-6 flex-grow">
+                                <li class="flex items-center gap-2"><span class="text-primary font-bold">✦</span> Automatizované a plánované tasky</li>
+                                <li class="flex items-center gap-2"><span class="text-primary font-bold">✦</span> Scheduled triggers (spouštění dle rozvrhu)</li>
+                                <li class="flex items-center gap-2"><span class="text-primary font-bold">✦</span> Pluginy a sdílené Skills pro tým</li>
+                                <li class="flex items-center gap-2"><span class="text-primary font-bold">✦</span> Workflow s více agenty souběžně</li>
+                                <li class="flex items-start gap-2 text-slate-500 mt-2"><span class="text-slate-400">⏭</span> <em class="leading-relaxed">Kdy použít: Potřebuješ opakující se workflow, automatické reporty nebo sdílet agenty s kolegy.</em></li>
+                            </ul>
+                            <div class="bg-slate-900 p-4 rounded-xl mt-auto shadow-inner">
+                                <span class="text-[10px] text-slate-400 font-bold block mb-2 uppercase tracking-widest">Příklad</span>
+                                <div class="font-mono text-white text-xs leading-relaxed break-words">"Každý pátek vygeneruj přehled změn v datovém modelu za týden a pošli ho týmu."</div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </section>
