@@ -107,6 +107,7 @@
                 <a href="#setup" class="hover:text-primary transition-colors">Setup</a>
                 <a href="#tools" class="hover:text-primary transition-colors">Nástroje</a>
                 <a href="#tips" class="hover:text-primary transition-colors">Tipy</a>
+                <a href="#anatomy" class="hover:text-primary transition-colors">Anatomie</a>
                 <a href="#library" class="hover:text-primary transition-colors">Prompty</a>
             </div>
             <!-- Gemini nav -->
@@ -784,6 +785,97 @@ Shrnutí musí obsahovat: (1) původní cíl/problém, (2) klíčová rozhodnut�
                 </div>
 
             </div>
+        </section>
+
+        <!-- Anatomie promptu -->
+        <section id="anatomy" class="space-y-8 fade-in scroll-mt-24">
+            <!-- Hlavička -->
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-10">
+                <div class="flex items-center gap-4 mb-3">
+                    <div class="w-12 h-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center text-2xl">✦</div>
+                    <div>
+                        <h2 class="text-3xl font-black text-white italic">Anatomie <span class="text-primary">Claude Promptu</span></h2>
+                        <p class="text-slate-400 text-sm font-medium mt-1">6 stavebních bloků, ze kterých se skládá výborný prompt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6 karet v 3×2 gridu -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-200 rounded-3xl overflow-hidden shadow-sm border border-slate-200">
+
+                <!-- 1: Role -->
+                <div class="bg-white p-6 relative">
+                    <span class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-7 h-7 bg-white border border-slate-200 rounded-full items-center justify-center text-slate-400 text-xs font-bold shadow-sm">→</span>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-7 h-7 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0">1</span>
+                        <h3 class="font-black text-slate-900 text-lg">Role</h3>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">Přiřaď Claudovi roli experta — nastaví tón, styl a hloubku odpovědi.</p>
+                    <p class="text-xs text-orange-500 font-bold mt-3 uppercase tracking-widest">Act as a…</p>
+                </div>
+
+                <!-- 2: Task -->
+                <div class="bg-white p-6 relative">
+                    <span class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-7 h-7 bg-white border border-slate-200 rounded-full items-center justify-center text-slate-400 text-xs font-bold shadow-sm">→</span>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-7 h-7 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0">2</span>
+                        <h3 class="font-black text-slate-900 text-lg">Task</h3>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">Jasně definuj co chceš — jeden konkrétní úkol, ne vágní zadání.</p>
+                    <p class="text-xs text-blue-500 font-bold mt-3 uppercase tracking-widest">Build / Write / Analyze…</p>
+                </div>
+
+                <!-- 3: Context -->
+                <div class="bg-white p-6 relative">
+                    <span class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 z-10 text-slate-300 text-2xl font-light">↙</span>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-7 h-7 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0">3</span>
+                        <h3 class="font-black text-slate-900 text-lg">Context</h3>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">Dej mu relevantní kontext — produkt, tým, omezení, co už víš.</p>
+                    <p class="text-xs text-purple-500 font-bold mt-3 uppercase tracking-widest">Here's what I know…</p>
+                </div>
+
+                <!-- 4: Reasoning -->
+                <div class="bg-white p-6 relative">
+                    <span class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-7 h-7 bg-white border border-slate-200 rounded-full items-center justify-center text-slate-400 text-xs font-bold shadow-sm">→</span>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0">4</span>
+                        <h3 class="font-black text-slate-900 text-lg">Reasoning</h3>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">Řekni mu záměr a jak má uvažovat — výstup bude obhajitelný, ne jen plausible.</p>
+                    <p class="text-xs text-emerald-500 font-bold mt-3 uppercase tracking-widest">The goal is…</p>
+                </div>
+
+                <!-- 5: Stop conditions -->
+                <div class="bg-white p-6 relative">
+                    <span class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 w-7 h-7 bg-white border border-slate-200 rounded-full items-center justify-center text-slate-400 text-xs font-bold shadow-sm">→</span>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-7 h-7 bg-red-100 text-red-600 rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0">5</span>
+                        <h3 class="font-black text-slate-900 text-lg">Stop conditions</h3>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">Definuj kdy je hotovo — bez stop podmínek Claude hádá, kdy přestat.</p>
+                    <p class="text-xs text-red-500 font-bold mt-3 uppercase tracking-widest">Only stop when…</p>
+                </div>
+
+                <!-- 6: Output -->
+                <div class="bg-white p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="w-7 h-7 bg-primary/20 text-primary rounded-lg flex items-center justify-center text-xs font-black flex-shrink-0">6</span>
+                        <h3 class="font-black text-slate-900 text-lg">Output</h3>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">Specifikuj formát výstupu — délku, strukturu, styl, co zahrnout.</p>
+                    <p class="text-xs text-primary font-bold mt-3 uppercase tracking-widest">Present as…</p>
+                </div>
+
+            </div>
+
+            <!-- Tip pod gridem -->
+            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex items-start gap-3">
+                <span class="text-slate-400 text-lg mt-0.5">💡</span>
+                <p class="text-sm text-slate-600 leading-relaxed">Nemusíš použít všechny části v každém promptu — ale čím víc jich zahrneš, tím předvídatelnější a kvalitnější výstup dostaneš.</p>
+            </div>
+
         </section>
 
         <!-- Prompt Library -->
