@@ -107,6 +107,7 @@
                 <a href="#setup" class="hover:text-primary transition-colors">Setup</a>
                 <a href="#tools" class="hover:text-primary transition-colors">Nástroje</a>
                 <a href="#tips" class="hover:text-primary transition-colors">Tipy</a>
+                <a href="#hacks" class="hover:text-primary transition-colors">Hacks</a>
                 <a href="#library" class="hover:text-primary transition-colors">Prompty</a>
             </div>
             <!-- Gemini nav -->
@@ -131,38 +132,18 @@
                     <p class="text-xl text-slate-500 font-medium text-balance">Průvodce pro práci s AI nástroji v Logiu. Vyber si svůj nástroj a začni.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
-                    <!-- Claude -->
-                    <button onclick="showView('claude')" class="group text-left bg-white border-2 border-primary/30 hover:border-primary rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-200">
-                        <div class="flex items-center gap-4 mb-5">
-                            <div class="w-14 h-14 rounded-2xl bg-[#DA7756]/10 flex items-center justify-center shrink-0">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#DA7756"/><path d="M8 12.5C8 10.567 9.567 9 11.5 9H14v6h-2.5C9.567 15 8 13.433 8 11.5v1z" fill="white"/><path d="M14 9h1a3 3 0 010 6h-1V9z" fill="white" opacity="0.7"/></svg>
-                            </div>
-                            <div>
-                                <div class="text-[10px] font-black uppercase tracking-widest text-primary mb-1">★ Primární nástroj</div>
-                                <h2 class="text-2xl font-black text-slate-900">Claude</h2>
-                            </div>
-                        </div>
-                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Hlavní AI pro komplexní myšlení. Power BI přes MCP, analýzy, code review, plánování — Claude je číslo 1.</p>
-                        <ul class="space-y-2 text-sm text-slate-700 mb-7">
-                            <li class="flex items-center gap-2"><span class="text-primary font-bold">✔</span> Power BI &amp; DAX přes MCP</li>
-                            <li class="flex items-center gap-2"><span class="text-primary font-bold">✔</span> Komplexní reasoning a analýzy</li>
-                            <li class="flex items-center gap-2"><span class="text-primary font-bold">✔</span> Code review a refaktoring</li>
-                            <li class="flex items-center gap-2"><span class="text-primary font-bold">✔</span> Dlouhodobé projektové práce</li>
-                        </ul>
-                        <div class="flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all">Otevřít průvodce <span>→</span></div>
-                    </button>
-                    <!-- Gemini -->
+                    <!-- Gemini (Base) — vlevo -->
                     <button onclick="showView('gemini')" class="group text-left bg-white border-2 border-blue-200 hover:border-blue-400 rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-200">
                         <div class="flex items-center gap-4 mb-5">
                             <div class="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center shrink-0">
                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 28C14 26.0633 13.6267 24.2433 12.88 22.54C12.1567 20.8367 11.165 19.355 9.905 18.095C8.645 16.835 7.163 15.843 5.46 15.12C3.757 14.373 1.937 14 0 14C1.937 14 3.757 13.638 5.46 12.915C7.163 12.168 8.645 11.165 9.905 9.905C11.165 8.645 12.157 7.163 12.88 5.46C13.627 3.757 14 1.937 14 0C14 1.937 14.362 3.757 15.085 5.46C15.832 7.163 16.835 8.645 18.095 9.905C19.355 11.165 20.837 12.168 22.54 12.915C24.243 13.638 26.063 14 28 14C26.063 14 24.243 14.373 22.54 15.12C20.837 15.843 19.355 16.835 18.095 18.095C16.835 19.355 15.832 20.837 15.085 22.54C14.362 24.243 14 26.063 14 28Z" fill="url(#gem-g1)"/><defs><linearGradient id="gem-g1" x1="0" y1="28" x2="28" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1C69FF"/><stop offset="1" stop-color="#A8C7FA"/></linearGradient></defs></svg>
                             </div>
                             <div>
-                                <div class="text-[10px] font-black uppercase tracking-widest text-blue-500 mb-1">Sekundární nástroj</div>
+                                <div class="text-[10px] font-black uppercase tracking-widest text-blue-500 mb-1">Base · Výchozí v Logio</div>
                                 <h2 class="text-2xl font-black text-slate-900">Gemini</h2>
                             </div>
                         </div>
-                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Průzkum, obrázky a scheduled prompty. Perfektní doplněk k Claudovi — má přirozenou výhodu tam, kde Claude naráží na limity.</p>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Výchozí AI pro všechny v Logio. Průzkum, obrázky, scheduled prompty — velký context window a žádné limity tokenů.</p>
                         <ul class="space-y-2 text-sm text-slate-700 mb-7">
                             <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">✦</span> <strong>1M+ tokenů</strong> context window</li>
                             <li class="flex items-center gap-2"><span class="text-blue-500 font-bold">✦</span> Žádné weekly limity tokenů</li>
@@ -172,6 +153,83 @@
                         </ul>
                         <div class="flex items-center gap-2 text-blue-500 font-bold text-sm group-hover:gap-3 transition-all">Otevřít průvodce <span>→</span></div>
                     </button>
+                    <!-- Claude (Nadstavba) — vpravo -->
+                    <button onclick="showView('claude')" class="group text-left bg-white border-2 border-primary/30 hover:border-primary rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-200">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="w-14 h-14 rounded-2xl bg-[#DA7756]/10 flex items-center justify-center shrink-0">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#DA7756"/><path d="M8 12.5C8 10.567 9.567 9 11.5 9H14v6h-2.5C9.567 15 8 13.433 8 11.5v1z" fill="white"/><path d="M14 9h1a3 3 0 010 6h-1V9z" fill="white" opacity="0.7"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-[10px] font-black uppercase tracking-widest text-primary mb-1">Nadstavba · Pro pokročilé úkoly</div>
+                                <h2 class="text-2xl font-black text-slate-900">Claude</h2>
+                            </div>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Nadstavba nad Gemini pro komplexní myšlení. Power BI přes MCP, hluboké analýzy, code review a plánování.</p>
+                        <ul class="space-y-2 text-sm text-slate-700 mb-7">
+                            <li class="flex items-center gap-2"><span class="text-primary font-bold">✔</span> Power BI &amp; DAX přes MCP</li>
+                            <li class="flex items-center gap-2"><span class="text-primary font-bold">✔</span> Komplexní reasoning a analýzy</li>
+                            <li class="flex items-center gap-2"><span class="text-primary font-bold">✔</span> Code review a refaktoring</li>
+                            <li class="flex items-center gap-2"><span class="text-primary font-bold">✔</span> Dlouhodobé projektové práce</li>
+                        </ul>
+                        <div class="flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all">Otevřít průvodce <span>→</span></div>
+                    </button>
+                </div>
+
+                <!-- Rozhodovací strom -->
+                <div class="w-full max-w-4xl mx-auto space-y-0 mt-8">
+                    <!-- Kořenová otázka -->
+                    <div class="flex justify-center">
+                        <div class="bg-slate-900 text-white font-black text-xl px-10 py-5 rounded-2xl shadow-xl flex items-center gap-3">
+                            <span>🤔</span> Jaký máš dnes úkol?
+                        </div>
+                    </div>
+                    <!-- Vertikální linie + horizontální větvení -->
+                    <div class="flex justify-center"><div class="w-px h-6 bg-slate-300"></div></div>
+                    <div class="flex">
+                        <div class="flex-1 border-t-2 border-r-2 border-slate-200 rounded-tr-xl" style="height:20px"></div>
+                        <div class="flex-1 border-t-2 border-l-2 border-slate-200 rounded-tl-xl" style="height:20px"></div>
+                    </div>
+                    <!-- Dvě větve -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Gemini větev -->
+                        <div class="flex flex-col">
+                            <div class="flex justify-center"><div class="w-px h-5 bg-slate-300"></div></div>
+                            <div class="bg-blue-50/40 border-2 border-blue-100 rounded-3xl p-6 flex flex-col gap-3 flex-grow">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><path d="M14 28C14 26.0633 13.6267 24.2433 12.88 22.54C12.1567 20.8367 11.165 19.355 9.905 18.095C8.645 16.835 7.163 15.843 5.46 15.12C3.757 14.373 1.937 14 0 14C1.937 14 3.757 13.638 5.46 12.915C7.163 12.168 8.645 11.165 9.905 9.905C11.165 8.645 12.157 7.163 12.88 5.46C13.627 3.757 14 1.937 14 0C14 1.937 14.362 3.757 15.085 5.46C15.832 7.163 16.835 8.645 18.095 9.905C19.355 11.165 20.837 12.168 22.54 12.915C24.243 13.638 26.063 14 28 14C26.063 14 24.243 14.373 22.54 15.12C20.837 15.843 19.355 16.835 18.095 18.095C16.835 19.355 15.832 20.837 15.085 22.54C14.362 24.243 14 26.063 14 28Z" fill="url(#gem-tree)"/><defs><linearGradient id="gem-tree" x1="0" y1="28" x2="28" y2="0"><stop offset="0" stop-color="#1C69FF"/><stop offset="1" stop-color="#A8C7FA"/></linearGradient></defs></svg>
+                                    <span class="font-black text-slate-800 text-base">Gemini</span>
+                                </div>
+                                <button onclick="showView('gemini')" class="text-left bg-white hover:bg-blue-50 border border-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>🔍</span> Chci prozkoumat nové téma nebo trh</button>
+                                <button onclick="showView('gemini')" class="text-left bg-white hover:bg-blue-50 border border-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>🖼️</span> Mám obrázek nebo screenshot k analýze</button>
+                                <button onclick="showView('gemini')" class="text-left bg-white hover:bg-blue-50 border border-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>📁</span> Pracuji s Google Docs nebo Sheets</button>
+                                <button onclick="showView('gemini')" class="text-left bg-white hover:bg-blue-50 border border-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>⏰</span> Chci pravidelný scheduled přehled</button>
+                                <button onclick="showView('gemini')" class="text-left bg-white hover:bg-blue-50 border border-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>📚</span> Hledám ve vlastních dokumentech</button>
+                                <button onclick="showView('gemini')" class="text-left bg-white hover:bg-blue-50 border border-blue-100 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>🌐</span> Potřebuji aktuální info z webu</button>
+                                <div class="mt-2 pt-3 border-t border-blue-100">
+                                    <button onclick="showView('gemini')" class="w-full flex items-center justify-center gap-2 text-blue-600 font-bold text-sm hover:gap-3 transition-all">Otevřít průvodce Gemini <span>→</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Claude větev -->
+                        <div class="flex flex-col">
+                            <div class="flex justify-center"><div class="w-px h-5 bg-slate-300"></div></div>
+                            <div class="bg-primary/5 border-2 border-primary/20 rounded-3xl p-6 flex flex-col gap-3 flex-grow">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#DA7756"/><path d="M8 12.5C8 10.567 9.567 9 11.5 9H14v6h-2.5C9.567 15 8 13.433 8 11.5v1z" fill="white"/><path d="M14 9h1a3 3 0 010 6h-1V9z" fill="white" opacity="0.7"/></svg>
+                                    <span class="font-black text-slate-800 text-base">Claude</span>
+                                </div>
+                                <button onclick="showView('claude')" class="text-left bg-white hover:bg-primary/5 border border-primary/20 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>📊</span> Pracuji s Power BI modelem přes MCP</button>
+                                <button onclick="showView('claude')" class="text-left bg-white hover:bg-primary/5 border border-primary/20 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>📐</span> Optimalizace modelu nebo DAX</button>
+                                <button onclick="showView('claude')" class="text-left bg-white hover:bg-primary/5 border border-primary/20 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>💻</span> Code review</button>
+                                <button onclick="showView('claude')" class="text-left bg-white hover:bg-primary/5 border border-primary/20 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>🧠</span> Potřebuji hlubokou analýzu nebo plán</button>
+                                <button onclick="showView('claude')" class="text-left bg-white hover:bg-primary/5 border border-primary/20 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>⚡</span> Chci automatizovat workflow</button>
+                                <button onclick="showView('claude')" class="text-left bg-white hover:bg-primary/5 border border-primary/20 rounded-xl px-4 py-2.5 text-sm text-slate-700 font-medium transition-colors flex items-center gap-2"><span>👨‍💻</span> Programování</button>
+                                <div class="mt-2 pt-3 border-t border-primary/10">
+                                    <button onclick="showView('claude')" class="w-full flex items-center justify-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">Otevřít průvodce Claude <span>→</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -291,22 +349,22 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 max-w-2xl gap-6" id="platform-selectors">
                     <label class="relative cursor-pointer">
                         <input type="radio" name="platform" value="claude" class="peer sr-only" checked onchange="appState.setPlatform('claude')">
-                        <div class="p-6 rounded-2xl border-2 border-slate-200 bg-white hover:border-primary peer-checked:border-primary peer-checked:bg-white shadow-sm transition-all text-center">
+                        <div id="btn-platform-claude" class="p-6 rounded-2xl border-2 border-orange-300 bg-orange-50 shadow-sm transition-all text-center">
                             <p class="font-black text-slate-900">Claude Desktop</p>
                             <p class="text-xs text-slate-400 mt-1 uppercase tracking-widest">Anthropic App</p>
                         </div>
                     </label>
                     <label class="relative cursor-pointer">
                         <input type="radio" name="platform" value="vscode" class="peer sr-only" onchange="appState.setPlatform('vscode')">
-                        <div class="p-6 rounded-2xl border-2 border-slate-200 bg-white hover:border-primary peer-checked:border-primary peer-checked:bg-white shadow-sm transition-all text-center">
+                        <div id="btn-platform-vscode" class="p-6 rounded-2xl border-2 border-slate-200 bg-white shadow-sm transition-all text-center">
                             <p class="font-black text-slate-900">VS Code</p>
-                            <p class="text-xs text-slate-400 mt-1 uppercase tracking-widest">Cline / Roo Ext.</p>
+                            <p class="text-xs text-slate-400 mt-1 uppercase tracking-widest">App</p>
                         </div>
                     </label>
                 </div>
             </div>
 
-            <div class="p-8 md:p-12 space-y-10">
+            <div id="setup-steps-panel" class="p-8 md:p-12 space-y-10 transition-colors duration-300">
                 <div class="flex space-x-4 mb-8 overflow-x-auto no-scrollbar pb-2 border-b border-slate-100">
                     <button onclick="appState.setStep(1)" id="btn-step-1" class="px-8 py-3 rounded-full font-bold text-sm bg-primary text-white transition-all shadow-lg shadow-primary/20">1. Přístup</button>
                     <button onclick="appState.setStep(2)" id="btn-step-2" class="px-8 py-3 rounded-full font-bold text-sm bg-slate-200 text-slate-500 hover:bg-slate-300 transition-all">2. Konfigurace</button>
@@ -455,6 +513,44 @@
 
 
                 </div>
+
+                <!-- Modely -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 md:col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-slate-200 text-slate-600 rounded-xl flex items-center justify-center text-2xl">🎛</div>
+                        <div>
+                            <h3 class="font-black text-slate-900 text-xl">Který model zvolit?</h3>
+                            <p class="text-sm text-slate-500 font-medium mt-1">Model vyberete v Claude Desktop přes ikonku vedle textového pole.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200 flex flex-col">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-2xl">🐣</span>
+                                <h4 class="font-black text-slate-900 text-lg">Haiku</h4>
+                                <span class="ml-auto text-[10px] font-bold uppercase tracking-widest bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full">Rychlý</span>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed flex-grow">Rychlé drafty, jednoduché otázky, opakující se tasky. Kdykoli nepotřebuješ hloubku.</p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-5 border-2 border-primary/30 flex flex-col">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-2xl">✦</span>
+                                <h4 class="font-black text-slate-900 text-lg">Sonnet</h4>
+                                <span class="ml-auto text-[10px] font-bold uppercase tracking-widest bg-primary/10 text-primary px-2 py-0.5 rounded-full">Výchozí</span>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed flex-grow">Výchozí pro většinu práce: code review, DAX, analýzy, plánování. Nejlepší poměr výkon/cena.</p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-5 border border-slate-200 flex flex-col">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-2xl">🔮</span>
+                                <h4 class="font-black text-slate-900 text-lg">Opus</h4>
+                                <span class="ml-auto text-[10px] font-bold uppercase tracking-widest bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">Nejsilnější</span>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed flex-grow">Nejsložitější analýzy, architektonická rozhodnutí, multi-step reasoning. Šetři ho na situace, kde ostatní nestačí.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -493,27 +589,76 @@
                 </div>
 
                 <!-- Tip: Skills -->
-                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-lg transition-all flex flex-col">
-                    <div class="flex items-center gap-4 mb-4">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 hover:shadow-lg transition-all flex flex-col md:col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-12 bg-emerald-50 text-emerald-500 rounded-xl flex items-center justify-center text-2xl">🛠️</div>
                         <h3 class="font-black text-slate-900 text-xl">Skills</h3>
                     </div>
-                    <p class="text-slate-600 leading-relaxed text-sm mb-4"><strong>Co to je:</strong> Předpřipravené balíčky dovedností a znalostí (de facto pluginy). Mohou to být oficiální Anthropic Skills, osobní, nebo Third party doplňky z případného "trhu".</p>
-                    
-                    <div class="mb-5">
-                        <p class="text-sm text-slate-900 font-bold mb-1">Příklad:</p>
-                        <p class="text-sm text-slate-600">Interní plugin specifikovaný výhradně pro <em>Základní analýzy Logio</em>. Zavoláte skill a agent automaticky zná a aplikuje vaši metodiku.</p>
-                    </div>
-
-                    <div class="mt-auto bg-slate-50 p-5 rounded-2xl border border-slate-100">
-                        <h4 class="font-bold text-emerald-800 uppercase tracking-widest text-[11px] mb-3 border-b border-slate-200 pb-2">Postup založení</h4>
-                        <ul class="space-y-2 text-sm text-slate-700 font-medium">
-                            <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">1.</span> <div><strong>Name & Trigger:</strong> Pojmenování a příkaz ke spuštění.</div></li>
-                            <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">2.</span> <div><strong>Goal:</strong> Jasná definice hlavního cíle.</div></li>
-                            <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">3.</span> <div><strong>Connectors:</strong> Napojení na specifická data/nástroje.</div></li>
-                            <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">4.</span> <div><strong>Process:</strong> Instrukce krok za krokem.</div></li>
-                            <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">5.</span> <div><strong>Define Output:</strong> Exaktní podoba formátu výstupu.</div></li>
-                        </ul>
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <!-- Vlevo: Co to je + Postup -->
+                        <div class="flex-1 flex flex-col">
+                            <p class="text-slate-600 leading-relaxed text-sm mb-4"><strong>Co to je:</strong> Předpřipravené balíčky dovedností a znalostí (de facto pluginy). Mohou to být oficiální Anthropic Skills, osobní, nebo Third party doplňky z případného "trhu".</p>
+                            <div class="mb-5">
+                                <p class="text-sm text-slate-900 font-bold mb-1">Příklad:</p>
+                                <p class="text-sm text-slate-600">Interní plugin specifikovaný výhradně pro <em>Základní analýzy Logio</em>. Zavoláte skill a agent automaticky zná a aplikuje vaši metodiku.</p>
+                            </div>
+                            <div class="mt-auto bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                                <h4 class="font-bold text-emerald-800 uppercase tracking-widest text-[11px] mb-3 border-b border-slate-200 pb-2">Postup založení</h4>
+                                <ul class="space-y-2 text-sm text-slate-700 font-medium">
+                                    <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">1.</span> <div><strong>Name & Trigger:</strong> Pojmenování a příkaz ke spuštění.</div></li>
+                                    <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">2.</span> <div><strong>Goal:</strong> Jasná definice hlavního cíle.</div></li>
+                                    <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">3.</span> <div><strong>Connectors:</strong> Napojení na specifická data/nástroje.</div></li>
+                                    <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">4.</span> <div><strong>Process:</strong> Instrukce krok za krokem.</div></li>
+                                    <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">5.</span> <div><strong>Define Output:</strong> Exaktní podoba formátu výstupu.</div></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Vpravo: Doporučené Skills -->
+                        <div class="flex-1">
+                            <h4 class="font-bold text-slate-900 uppercase tracking-widest text-[11px] mb-4 border-b border-slate-200 pb-2">Doporučené Skills</h4>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="bg-slate-50 rounded-xl p-3 flex flex-col gap-1.5 border border-slate-100">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-md flex items-center justify-center text-sm flex-shrink-0">📚</span>
+                                        <p class="font-bold text-slate-900 text-sm">Context7</p>
+                                    </div>
+                                    <p class="text-xs text-slate-500 leading-relaxed">Aktuální docs libovolné knihovny přímo do kontextu.</p>
+                                    <a href="https://github.com/upstash/context7" target="_blank" class="text-xs text-primary font-bold hover:underline">GitHub →</a>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-3 flex flex-col gap-1.5 border border-slate-100">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-6 h-6 bg-orange-100 text-orange-600 rounded-md flex items-center justify-center text-sm flex-shrink-0">🔄</span>
+                                        <p class="font-bold text-slate-900 text-sm">Ralph Loop</p>
+                                    </div>
+                                    <p class="text-xs text-slate-500 leading-relaxed">Iterační loop — Claude opakuje task dokud neprojde testy.</p>
+                                    <a href="https://github.com/frankbria/ralph-claude-code" target="_blank" class="text-xs text-primary font-bold hover:underline">GitHub →</a>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-3 flex flex-col gap-1.5 border border-slate-100">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-6 h-6 bg-purple-100 text-purple-600 rounded-md flex items-center justify-center text-sm flex-shrink-0">🧠</span>
+                                        <p class="font-bold text-slate-900 text-sm">Claude Mem</p>
+                                    </div>
+                                    <p class="text-xs text-slate-500 leading-relaxed">Persistentní paměť — kontext z minulých sessions.</p>
+                                    <a href="https://github.com/thedotmack/claude-mem" target="_blank" class="text-xs text-primary font-bold hover:underline">GitHub →</a>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-3 flex flex-col gap-1.5 border border-slate-100">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-6 h-6 bg-pink-100 text-pink-600 rounded-md flex items-center justify-center text-sm flex-shrink-0">🎨</span>
+                                        <p class="font-bold text-slate-900 text-sm">Frontend Design</p>
+                                    </div>
+                                    <p class="text-xs text-slate-500 leading-relaxed">Produkční UI na první pokus — estetická rozhodnutí před kódem.</p>
+                                    <a href="https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design" target="_blank" class="text-xs text-primary font-bold hover:underline">GitHub →</a>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-3 flex flex-col gap-1.5 border border-slate-100 col-span-2">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-6 h-6 bg-slate-200 text-slate-600 rounded-md flex items-center justify-center text-sm flex-shrink-0">🕵️</span>
+                                        <p class="font-bold text-slate-900 text-sm">Code Review Agents</p>
+                                    </div>
+                                    <p class="text-xs text-slate-500 leading-relaxed">Paralelní sub-agenti: security, performance, style a testy najednou.</p>
+                                    <a href="https://github.com/anthropics/claude-code/tree/main/plugins/code-review" target="_blank" class="text-xs text-primary font-bold hover:underline">GitHub →</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -587,6 +732,69 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Claude Code Hacks -->
+        <section id="hacks" class="space-y-10 fade-in scroll-mt-24">
+            <div class="border-b border-slate-200 pb-6">
+                <h2 class="text-4xl font-black text-slate-900 italic">Claude Code <span class="text-primary">Hacks</span></h2>
+                <p class="text-slate-500 text-lg font-medium mt-2">Triky pro efektivnější práci — přímý dopad na rychlost a spotřebu tokenů.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <!-- PDF → Gemini -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 hover:shadow-lg transition-all flex flex-col">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-red-50 text-red-500 rounded-xl flex items-center justify-center text-xl">📄</div>
+                        <h3 class="font-black text-slate-900 text-lg">PDF komprese přes Gemini</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">Před přiložením PDF ho nejdřív pošli Gemini a nech ho převést na čistý text. Claude pak zpracuje výstup rychleji a levněji než raw PDF.</p>
+                </div>
+
+                <!-- Session timing -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 hover:shadow-lg transition-all flex flex-col">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-amber-50 text-amber-500 rounded-xl flex items-center justify-center text-xl">⏱</div>
+                        <h3 class="font-black text-slate-900 text-lg">Session timing</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">Začni novou session jen tehdy, kdy jsi skutečně ready pracovat — ne jen „mrknu na to". Prázdné nebo nedokončené session zbytečně pálí context a limity.</p>
+                </div>
+
+                <!-- Caveman Method -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 hover:shadow-lg transition-all flex flex-col">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-stone-100 text-stone-600 rounded-xl flex items-center justify-center text-xl">🪨</div>
+                        <h3 class="font-black text-slate-900 text-lg">Caveman Method</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Místo složitého popisu problému pošli surový kód, chybovou hlášku nebo screenshot. Claude z toho vyčte víc než z jakéhokoli popisu.</p>
+                    <div class="mt-auto bg-slate-900 p-4 rounded-xl relative group">
+                        <button onclick="utils.copyPrompt(this)" class="copy-btn absolute top-3 right-3 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 text-xs px-2 py-1 rounded-lg flex items-center gap-1 font-bold tracking-wide uppercase transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span class="btn-text">Kopírovat</span>
+                        </button>
+                        <div class="font-mono text-lime-400 text-xs leading-relaxed pr-20">Reply in the most concise form possible. Skip pleasantries, preambles, and recaps of my question. Prefer short declarative sentences. If a tool call is needed, run it first and show only the result. Do not narrate your steps.</div>
+                    </div>
+                </div>
+
+                <!-- Compact Skill -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 hover:shadow-lg transition-all flex flex-col">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center text-xl">🗜</div>
+                        <h3 class="font-black text-slate-900 text-lg">Compact Skill</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Když session narůstá, zavolej <code class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-800 font-mono">/compact</code>. Claude shrne vše podstatné, resetuje context okno a pokračuje bez ztráty informací.</p>
+                    <div class="mt-auto bg-slate-900 p-4 rounded-xl relative group">
+                        <button onclick="utils.copyPrompt(this)" class="copy-btn absolute top-3 right-3 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 text-xs px-2 py-1 rounded-lg flex items-center gap-1 font-bold tracking-wide uppercase transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            <span class="btn-text">Kopírovat</span>
+                        </button>
+                        <div class="font-mono text-lime-400 text-xs leading-relaxed pr-20">/compact
+Shrnutí musí obsahovat: (1) původní cíl/problém, (2) klíčová rozhodnutí a jejich důvody, (3) kód, konfigurace nebo data, na kterých jsme se shodli (v blocích kódu), (4) otevřené otázky a další kroky. Vynech small talk. Optimalizuj shrnutí tak, aby ho jiný Claude v novém chatu mohl snadno uchopit.</div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -700,7 +908,7 @@
                     <svg width="40" height="40" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 28C14 26.0633 13.6267 24.2433 12.88 22.54C12.1567 20.8367 11.165 19.355 9.905 18.095C8.645 16.835 7.163 15.843 5.46 15.12C3.757 14.373 1.937 14 0 14C1.937 14 3.757 13.638 5.46 12.915C7.163 12.168 8.645 11.165 9.905 9.905C11.165 8.645 12.157 7.163 12.88 5.46C13.627 3.757 14 1.937 14 0C14 1.937 14.362 3.757 15.085 5.46C15.832 7.163 16.835 8.645 18.095 9.905C19.355 11.165 20.837 12.168 22.54 12.915C24.243 13.638 26.063 14 28 14C26.063 14 24.243 14.373 22.54 15.12C20.837 15.843 19.355 16.835 18.095 18.095C16.835 19.355 15.832 20.837 15.085 22.54C14.362 24.243 14 26.063 14 28Z" fill="url(#gem-hero)"/><defs><linearGradient id="gem-hero" x1="0" y1="28" x2="28" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1C69FF"/><stop offset="1" stop-color="#A8C7FA"/></linearGradient></defs></svg>
                     <h1 class="text-5xl md:text-6xl font-black text-slate-900 leading-tight italic">Gemini</h1>
                 </div>
-                <p class="text-xl text-slate-500 font-medium text-balance">Doplněk k Claudovi — průzkum, obrázky, Google Workspace a pravidelná automatizace.</p>
+                <p class="text-xl text-slate-500 font-medium text-balance">Průzkum, obrázky, Google Workspace a pravidelné přehledy — dostupný pro všechny v Logio.</p>
             </div>
         </section>
 
@@ -708,7 +916,14 @@
         <section id="gemini-when" class="space-y-10 fade-in scroll-mt-24">
             <div class="border-b border-slate-200 pb-6">
                 <h2 class="text-4xl font-black text-slate-900 italic">Kdy použít <span class="text-blue-500">Gemini</span></h2>
-                <p class="text-slate-500 text-lg font-medium mt-2">Claude je primární volba — Gemini nastupuje tam, kde má přirozenou výhodu.</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="text-xs font-bold bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full">1M+ tokenů context window</span>
+                    <span class="text-xs font-bold bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full">Žádné weekly limity</span>
+                    <span class="text-xs font-bold bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full">Real-time web přístup</span>
+                    <span class="text-xs font-bold bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full">Multimodální analýza</span>
+                    <span class="text-xs font-bold bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full">Google Workspace integrace</span>
+                    <span class="text-xs font-bold bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full">Scheduled prompty</span>
+                </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white rounded-3xl p-7 shadow-sm border border-slate-200 hover:shadow-lg transition-all flex flex-col">
@@ -794,7 +1009,7 @@
                         <ul class="space-y-2 text-sm text-slate-700">
                             <li class="flex items-center gap-2"><span class="text-blue-500">✦</span> <strong>Pamatuje si instrukce</strong> — nemusíš je opakovat každý chat</li>
                             <li class="flex items-center gap-2"><span class="text-blue-500">✦</span> <strong>Vlastní knowledge base</strong> — nahraješ soubory jednou</li>
-                            <li class="flex items-center gap-2"><span class="text-blue-500">✦</span> <strong>Sdílitelný s týmem</strong> — všichni používají stejného asistenta</li>
+                            <li class="flex items-center gap-2"><span class="text-blue-500">✦</span> <strong>Lze sdílet s týmem</strong> — všichni používají stejného asistenta</li>
                         </ul>
                     </div>
                 </div>
@@ -805,7 +1020,7 @@
                         <li class="flex items-start gap-3"><span class="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center font-black text-xs shrink-0 mt-0.5">2</span><div><strong>Pojmenuj Gem</strong> — např. "Logio Data Analytik".</div></li>
                         <li class="flex items-start gap-3"><span class="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center font-black text-xs shrink-0 mt-0.5">3</span><div><strong>Napiš instrukce</strong> — co má Gem dělat, jaký má styl, na co se specializovat.</div></li>
                         <li class="flex items-start gap-3"><span class="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center font-black text-xs shrink-0 mt-0.5">4</span><div><strong>Nahraj soubory</strong> — metodiky, best practices, šablony, interní dokumentace.</div></li>
-                        <li class="flex items-start gap-3"><span class="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center font-black text-xs shrink-0 mt-0.5">5</span><div><strong>Uložit a sdílet</strong> s týmem — všichni mají přístup ke stejnému asistentovi.</div></li>
+                        <li class="flex items-start gap-3"><span class="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center font-black text-xs shrink-0 mt-0.5">5</span><div><strong>Uložit a sdílet s týmem</strong> — všichni mají přístup ke stejnému asistentovi.</div></li>
                     </ol>
                 </div>
             </div>
@@ -836,7 +1051,9 @@
 2. Zajímavé AI use cases relevantní pro datovou analytiku a Business Intelligence
 3. Doporučení: jak bych mohl konkrétní novinku využít ve svých projektech
 
-Formát: přehledný seznam s krátkými bullet pointy, max 1 stránka.</code></pre>
+Formát: přehledný seznam s krátkými bullet pointy, max 1 stránka.
+
+📌 Note: Gemini tento prompt automaticky nabídne jako Scheduled prompt — stačí potvrdit čas a frekvenci.</code></pre>
                     </div>
                 </div>
                 <div class="bg-slate-900 p-8 rounded-3xl shadow-xl border border-slate-800 flex flex-col h-full relative group">
@@ -876,6 +1093,56 @@ Udělej mi strukturovaný přehled:
 3. Výhody a nevýhody / omezení
 4. Jak to souvisí s datovou analytikou nebo Business Intelligence
 5. Doporučené další zdroje pro hlubší studium</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kdy přejít na Claude -->
+        <section class="fade-in scroll-mt-24">
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-10 border-l-4 border-primary">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-[#DA7756]/20 flex items-center justify-center shrink-0">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#DA7756"/><path d="M8 12.5C8 10.567 9.567 9 11.5 9H14v6h-2.5C9.567 15 8 13.433 8 11.5v1z" fill="white"/><path d="M14 9h1a3 3 0 010 6h-1V9z" fill="white" opacity="0.7"/></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-black text-white">Kdy Gemini nestačí → přejdi na Claude</h2>
+                        <p class="text-slate-400 text-sm mt-1">Situace, kde Claude má zásadní výhodu.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-slate-800/60 rounded-2xl p-5 border border-slate-700/50">
+                        <div class="text-xl mb-2">📊</div>
+                        <h4 class="font-bold text-white text-sm mb-1">Power BI přes MCP</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Přímé napojení na sémantický model, tvorba DAX měřítek a úpravy modelu — to Gemini neumí.</p>
+                    </div>
+                    <div class="bg-slate-800/60 rounded-2xl p-5 border border-slate-700/50">
+                        <div class="text-xl mb-2">🧠</div>
+                        <h4 class="font-bold text-white text-sm mb-1">Komplexní reasoning</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Vícevrstvé analytické úlohy, plánování architektury nebo zadání vyžadující hluboké myšlení.</p>
+                    </div>
+                    <div class="bg-slate-800/60 rounded-2xl p-5 border border-slate-700/50">
+                        <div class="text-xl mb-2">💻</div>
+                        <h4 class="font-bold text-white text-sm mb-1">Práce s kódem a soubory</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Code review, refaktoring nebo automatizace přes Claude Code — přímo v projektu, bez copypaste.</p>
+                    </div>
+                    <div class="bg-slate-800/60 rounded-2xl p-5 border border-slate-700/50">
+                        <div class="text-xl mb-2">📝</div>
+                        <h4 class="font-bold text-white text-sm mb-1">Dlouhé a přesné instrukce</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Když potřebuješ přesně řídit výstup, krok po kroku plánovat nebo Claude má schvalovat každý krok.</p>
+                    </div>
+                    <div class="bg-slate-800/60 rounded-2xl p-5 border border-slate-700/50">
+                        <div class="text-xl mb-2">⚡</div>
+                        <h4 class="font-bold text-white text-sm mb-1">Automatizace a Cowork</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">Orchestrace více agentů, SubAgents nebo komplexní workflow přes Claude Cowork a Code.</p>
+                    </div>
+                    <div class="bg-slate-800/60 rounded-2xl p-5 border border-slate-700/50 flex flex-col justify-between">
+                        <div>
+                            <div class="text-xl mb-2">→</div>
+                            <h4 class="font-bold text-white text-sm mb-1">Přejít na průvodce</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Kompletní průvodce Claudem včetně Power BI setupu.</p>
+                        </div>
+                        <button onclick="showView('claude')" class="w-full bg-primary hover:brightness-110 text-white font-bold text-sm px-4 py-2.5 rounded-xl transition-all">Otevřít Claude průvodce →</button>
                     </div>
                 </div>
             </div>
@@ -972,7 +1239,21 @@ Udělej mi strukturovaný přehled:
         const appState = {
             platform: 'claude',
             step: 1,
-            setPlatform: function(p) { this.platform = p; this.renderDynamicContent(); },
+            setPlatform: function(p) {
+                this.platform = p;
+                this.renderDynamicContent();
+                const panel = document.getElementById('setup-steps-panel');
+                panel.classList.remove('bg-orange-50', 'bg-blue-50');
+                panel.classList.add(p === 'claude' ? 'bg-orange-50' : 'bg-blue-50');
+                const btnClaude = document.getElementById('btn-platform-claude');
+                const btnVscode = document.getElementById('btn-platform-vscode');
+                btnClaude.className = p === 'claude'
+                    ? 'p-6 rounded-2xl border-2 border-orange-300 bg-orange-50 shadow-sm transition-all text-center'
+                    : 'p-6 rounded-2xl border-2 border-slate-200 bg-white shadow-sm transition-all text-center';
+                btnVscode.className = p === 'vscode'
+                    ? 'p-6 rounded-2xl border-2 border-blue-300 bg-blue-50 shadow-sm transition-all text-center'
+                    : 'p-6 rounded-2xl border-2 border-slate-200 bg-white shadow-sm transition-all text-center';
+            },
             setStep: function(s) {
                 this.step = s;
                 document.querySelectorAll('.step-content').forEach((el, i) => {
@@ -994,7 +1275,10 @@ Udělej mi strukturovaný přehled:
                 document.getElementById('dynamic-step2-content').innerHTML = d.step2;
                 document.getElementById('dynamic-permissions').innerHTML = d.permissions;
             },
-            init: function() { this.renderDynamicContent(); }
+            init: function() {
+                this.renderDynamicContent();
+                document.getElementById('setup-steps-panel').classList.add('bg-orange-50');
+            }
         };
 
         const utils = {
