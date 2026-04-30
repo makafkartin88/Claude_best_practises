@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Semantic</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--white); font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .card { border: 1px solid var(--border); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .swatch { height: 36px; border-radius: 8px; }
+  .name { font: 500 12px/1 var(--font-label); color: var(--fg); }
+  .token { font: 400 10px/1.3 var(--font-mono); color: var(--fg-subtle); }
+  .use { font: 400 11px/1.3 var(--font-sans); color: var(--fg-muted); }
+</style></head>
+<body>
+  <div class="grid">
+    <div class="card"><div class="swatch" style="background:var(--brand)"></div><div class="name">Brand</div><div class="token">--brand</div><div class="use">Primary CTA, links</div></div>
+    <div class="card"><div class="swatch" style="background:var(--success)"></div><div class="name">Success</div><div class="token">--success</div><div class="use">Positive system msg</div></div>
+    <div class="card"><div class="swatch" style="background:var(--warning)"></div><div class="name">Warning</div><div class="token">--warning</div><div class="use">Caution state</div></div>
+    <div class="card"><div class="swatch" style="background:var(--danger)"></div><div class="name">Danger</div><div class="token">--danger</div><div class="use">Destructive action</div></div>
+    <div class="card"><div class="swatch" style="background:var(--info)"></div><div class="name">Info</div><div class="token">--info</div><div class="use">Neutral notice</div></div>
+    <div class="card"><div class="swatch" style="background:var(--fg)"></div><div class="name">FG</div><div class="token">--fg</div><div class="use">Body text</div></div>
+    <div class="card"><div class="swatch" style="background:var(--fg-muted)"></div><div class="name">FG muted</div><div class="token">--fg-muted</div><div class="use">Secondary text</div></div>
+    <div class="card"><div class="swatch" style="background:var(--border);border:1px solid var(--border-strong)"></div><div class="name">Border</div><div class="token">--border</div><div class="use">Hairlines</div></div>
+  </div>
+</body></html>

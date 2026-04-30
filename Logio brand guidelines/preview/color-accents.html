@@ -1,0 +1,71 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Veritico modules</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 22px; background: var(--white); font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .group { display: flex; flex-direction: column; gap: 8px; }
+  .head { display: flex; align-items: center; gap: 8px; }
+  .head .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+  .head .name { font: 700 11px/1 var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg); }
+  .module { font: 500 14px/1.15 var(--font-display); color: var(--fg); letter-spacing: -0.005em; }
+  .module .tag { font-weight: 700; }
+  .triple { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .chip { aspect-ratio: 1.15; border-radius: 10px; display: flex; flex-direction: column; justify-content: space-between; padding: 9px 10px; font: 500 10px/1 var(--font-label); color: #fff; }
+  .chip .hex { font: 400 9px/1 var(--font-mono); opacity: 0.82; text-transform: uppercase; }
+  .soft { margin-top: 2px; display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 8px; background: var(--soft); color: var(--c); font: 500 10px/1 var(--font-mono); }
+  .soft .hex { color: var(--c); opacity: 0.8; }
+</style></head>
+<body>
+  <div class="grid">
+
+    <!-- STOCK -->
+    <div class="group" style="--c:#0F8DAE;--soft:#E0F2F7">
+      <div class="head"><span class="dot"></span><span class="name">Stock</span></div>
+      <div class="module"><span class="tag">Veritico</span> STOCK</div>
+      <div class="triple">
+        <div class="chip" style="background:#0A6580"><span>Dark</span><span class="hex">#0A6580</span></div>
+        <div class="chip" style="background:#0F8DAE"><span>Base</span><span class="hex">#0F8DAE</span></div>
+        <div class="chip" style="background:#7DC5D8;color:#0A6580"><span>Light</span><span class="hex">#7DC5D8</span></div>
+      </div>
+      <div class="soft">Soft · <span class="hex">#E0F2F7</span></div>
+    </div>
+
+    <!-- PROMO -->
+    <div class="group" style="--c:#C47D00;--soft:#FFF1D6">
+      <div class="head"><span class="dot" style="background:#FFA503"></span><span class="name">Promo</span></div>
+      <div class="module"><span class="tag">Veritico</span> PROMO</div>
+      <div class="triple">
+        <div class="chip" style="background:#C47D00"><span>Dark</span><span class="hex">#C47D00</span></div>
+        <div class="chip" style="background:#FFA503;color:#5A3A00"><span>Base</span><span class="hex">#FFA503</span></div>
+        <div class="chip" style="background:#FFCF73;color:#5A3A00"><span>Light</span><span class="hex">#FFCF73</span></div>
+      </div>
+      <div class="soft">Soft · <span class="hex">#FFF1D6</span></div>
+    </div>
+
+    <!-- PRICE -->
+    <div class="group" style="--c:#D1190D;--soft:#FBE1DE">
+      <div class="head"><span class="dot"></span><span class="name">Price</span></div>
+      <div class="module"><span class="tag">Veritico</span> PRICE</div>
+      <div class="triple">
+        <div class="chip" style="background:#9A0E05"><span>Dark</span><span class="hex">#9A0E05</span></div>
+        <div class="chip" style="background:#D1190D"><span>Base</span><span class="hex">#D1190D</span></div>
+        <div class="chip" style="background:#E8736A"><span>Light</span><span class="hex">#E8736A</span></div>
+      </div>
+      <div class="soft">Soft · <span class="hex">#FBE1DE</span></div>
+    </div>
+
+    <!-- RANGE -->
+    <div class="group" style="--c:#009687;--soft:#D8F0ED">
+      <div class="head"><span class="dot"></span><span class="name">Range</span></div>
+      <div class="module"><span class="tag">Veritico</span> RANGE</div>
+      <div class="triple">
+        <div class="chip" style="background:#006B5F"><span>Dark</span><span class="hex">#006B5F</span></div>
+        <div class="chip" style="background:#009687"><span>Base</span><span class="hex">#009687</span></div>
+        <div class="chip" style="background:#6BC3BA;color:#006B5F"><span>Light</span><span class="hex">#6BC3BA</span></div>
+      </div>
+      <div class="soft">Soft · <span class="hex">#D8F0ED</span></div>
+    </div>
+
+  </div>
+</body></html>

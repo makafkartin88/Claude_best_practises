@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Motion</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px; background: var(--white); font-family: var(--font-sans); }
+  .title { font: 700 11px/1 var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .row { display: flex; flex-direction: column; gap: 8px; }
+  .name { font: 500 12px/1 var(--font-mono); color: var(--fg); }
+  .val { font: 400 11px/1 var(--font-mono); color: var(--fg-subtle); }
+  .track { height: 44px; background: var(--bg-20); border-radius: 8px; position: relative; overflow: hidden; }
+  .dot { position: absolute; top: 50%; left: 0; width: 24px; height: 24px; background: var(--brand); border-radius: 50%; transform: translateY(-50%); animation-duration: 2.4s; animation-iteration-count: infinite; animation-fill-mode: both; }
+  .t-fast    { animation: run 1.6s infinite; animation-timing-function: var(--ease-out); }
+  .t-base    { animation: run 2.0s infinite; animation-timing-function: var(--ease-out); }
+  .t-slow    { animation: run 2.8s infinite; animation-timing-function: var(--ease-out); }
+  .t-inout   { animation: run 2.2s infinite; animation-timing-function: var(--ease-inout); }
+  @keyframes run { 0% { left: 0 } 50% { left: calc(100% - 24px) } 100% { left: 0 } }
+</style></head>
+<body>
+  <div class="title">Easing & duration</div>
+  <div class="grid">
+    <div class="row"><span class="name">--t-fast</span><span class="val">120ms · ease-out</span><div class="track"><div class="dot t-fast"></div></div></div>
+    <div class="row"><span class="name">--t-base</span><span class="val">200ms · ease-out</span><div class="track"><div class="dot t-base"></div></div></div>
+    <div class="row"><span class="name">--t-slow</span><span class="val">360ms · ease-out</span><div class="track"><div class="dot t-slow"></div></div></div>
+    <div class="row"><span class="name">--ease-inout</span><span class="val">symmetric</span><div class="track"><div class="dot t-inout"></div></div></div>
+  </div>
+</body></html>

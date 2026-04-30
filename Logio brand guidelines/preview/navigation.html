@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Navigation</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px; background: var(--white); font-family: var(--font-sans); display: flex; flex-direction: column; gap: 24px; }
+  .title { font: 700 11px/1 var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 10px; }
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--bg-40); }
+  .tab { padding: 12px 18px; font: 500 14px/1 var(--font-sans); color: var(--fg-muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+  .tab.active { color: var(--fg); border-bottom-color: var(--brand); }
+  .seg { display: inline-flex; padding: 4px; background: var(--bg-30); border-radius: 999px; gap: 2px; }
+  .seg-item { padding: 8px 18px; font: 500 13px/1 var(--font-sans); color: var(--fg-muted); border-radius: 999px; cursor: pointer; }
+  .seg-item.active { background: var(--white); color: var(--fg); box-shadow: var(--shadow-xs); }
+  .crumb { font: 400 13px/1 var(--font-sans); color: var(--fg-muted); display: flex; gap: 8px; align-items: center; }
+  .crumb span:last-child { color: var(--fg); }
+  .crumb .sep { color: var(--fg-subtle); }
+</style></head>
+<body>
+  <div>
+    <div class="title">Tabs</div>
+    <div class="tabs"><span class="tab active">Overview</span><span class="tab">Forecasting</span><span class="tab">Replenishment</span><span class="tab">Reports</span></div>
+  </div>
+  <div>
+    <div class="title">Segmented picker</div>
+    <div class="seg"><span class="seg-item active">Week</span><span class="seg-item">Month</span><span class="seg-item">Quarter</span><span class="seg-item">Year</span></div>
+  </div>
+  <div>
+    <div class="title">Breadcrumb</div>
+    <div class="crumb"><span>Veritico</span><span class="sep">/</span><span>STOCK</span><span class="sep">/</span><span>Forecast · Albert CZ</span></div>
+  </div>
+</body></html>

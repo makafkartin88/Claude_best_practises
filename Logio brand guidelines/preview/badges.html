@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Badges</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<style>
+  body { margin: 0; padding: 28px; background: var(--white); font-family: var(--font-sans); display: flex; flex-direction: column; gap: 20px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .title { font: 700 11px/1 var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 10px; }
+  .badge { font: 500 12px/1 var(--font-sans); border-radius: 999px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 6px; border: 1px solid transparent; }
+  .b-primary { background: var(--brand); color: var(--white); }
+  .b-secondary { background: transparent; color: var(--fg); border-color: var(--fg); }
+  .b-brand { background: var(--bg-20); color: var(--fg-brand); border-color: var(--brand-soft); }
+  .b-inverted { background: var(--grey-90); color: var(--white); }
+  .b-stock { background: #E0F2F7; color: #0A6580; }
+  .b-promo { background: #FFF1D6; color: #C47D00; }
+  .b-price { background: #FBE1DE; color: #9A0E05; }
+  .b-range { background: #D8F0ED; color: #006B5F; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+</style></head>
+<body>
+  <div>
+    <div class="title">Variants</div>
+    <div class="row">
+      <span class="badge b-primary">Primary</span>
+      <span class="badge b-secondary">Secondary</span>
+      <span class="badge b-brand">Brand</span>
+      <span class="badge b-inverted">Inverted</span>
+      <span class="badge b-secondary"><i class="ph ph-check-circle"></i>With icon</span>
+    </div>
+  </div>
+  <div>
+    <div class="title">Veritico product tags</div>
+    <div class="row">
+      <span class="badge b-stock"><span class="dot" style="color:#0F8DAE"></span>Veritico STOCK</span>
+      <span class="badge b-promo"><span class="dot" style="color:#FFA503"></span>Veritico PROMO</span>
+      <span class="badge b-price"><span class="dot" style="color:#D1190D"></span>Veritico PRICE</span>
+      <span class="badge b-range"><span class="dot" style="color:#009687"></span>Veritico RANGE</span>
+    </div>
+  </div>
+</body></html>

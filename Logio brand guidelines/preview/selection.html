@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Selection</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px; background: var(--white); font-family: var(--font-sans); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; align-items: start; }
+  .title { font: 700 11px/1 var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 12px; }
+  .check { display: flex; align-items: center; gap: 10px; padding: 6px 0; font: 400 14px/1 var(--font-sans); color: var(--fg); }
+  .sq { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid var(--grey-30); background: var(--white); display: inline-flex; align-items: center; justify-content: center; color: var(--white); }
+  .sq.on { background: var(--brand); border-color: var(--brand); }
+  .sq.on::after { content: ''; width: 5px; height: 9px; border: solid var(--white); border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-1px, -1px); }
+  .circ { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--grey-30); }
+  .circ.on { border: 5px solid var(--brand); }
+  .tog { width: 38px; height: 22px; border-radius: 999px; background: var(--bg-40); position: relative; transition: background var(--t-fast); }
+  .tog::after { content: ''; position: absolute; width: 16px; height: 16px; border-radius: 50%; background: var(--white); top: 3px; left: 3px; transition: left var(--t-fast); box-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+  .tog.on { background: var(--brand); }
+  .tog.on::after { left: 19px; }
+</style></head>
+<body>
+  <div>
+    <div class="title">Checkbox</div>
+    <label class="check"><span class="sq on"></span>Demand forecast</label>
+    <label class="check"><span class="sq on"></span>Replenishment</label>
+    <label class="check"><span class="sq"></span>Pricing rules</label>
+    <label class="check" style="opacity:0.4"><span class="sq"></span>Assortment (soon)</label>
+  </div>
+  <div>
+    <div class="title">Radio</div>
+    <label class="check"><span class="circ on"></span>Weekly</label>
+    <label class="check"><span class="circ"></span>Bi‑weekly</label>
+    <label class="check"><span class="circ"></span>Monthly</label>
+    <label class="check" style="opacity:0.4"><span class="circ"></span>Custom cadence</label>
+  </div>
+  <div>
+    <div class="title">Toggle</div>
+    <label class="check"><span class="tog on"></span>Auto‑replenish</label>
+    <label class="check"><span class="tog on"></span>Price alerts</label>
+    <label class="check"><span class="tog"></span>Dark mode</label>
+    <label class="check" style="opacity:0.4"><span class="tog"></span>Experimental</label>
+  </div>
+</body></html>

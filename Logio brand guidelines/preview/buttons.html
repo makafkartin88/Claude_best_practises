@@ -1,0 +1,58 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<style>
+  body { margin: 0; padding: 28px; background: var(--white); font-family: var(--font-sans); display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .title { font: 700 11px/1 var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 12px; }
+  button { font: 500 14px/1 var(--font-sans); border-radius: 999px; padding: 12px 22px; border: 1.5px solid transparent; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out); }
+  .brand { background: var(--brand); color: var(--white); }
+  .brand:hover { background: var(--brand-hover); }
+  .secondary { background: transparent; color: var(--fg); border-color: var(--fg); }
+  .secondary:hover { background: var(--bg-20); }
+  .ghost { background: transparent; color: var(--fg); border-color: transparent; }
+  .ghost:hover { background: var(--bg-20); }
+  .inverted { background: var(--white); color: var(--fg); border-color: var(--bg-40); }
+  .sm { padding: 8px 16px; font-size: 13px; }
+  .lg { padding: 16px 28px; font-size: 16px; }
+  .dark-row { background: var(--grey-90); padding: 16px 20px; border-radius: 12px; }
+  .brand-on-dark { background: var(--brand); color: var(--white); }
+  .outline-on-dark { background: transparent; color: var(--white); border-color: var(--white); }
+</style></head>
+<body>
+  <div>
+    <div class="title">Primary / Brand</div>
+    <div class="row">
+      <button class="brand lg">Get in touch</button>
+      <button class="brand">Show demo</button>
+      <button class="brand sm">See more</button>
+      <button class="brand"><i class="ph ph-arrow-right"></i>Next step</button>
+    </div>
+  </div>
+  <div>
+    <div class="title">Secondary · Ghost</div>
+    <div class="row">
+      <button class="secondary">Learn more</button>
+      <button class="secondary sm">Cancel</button>
+      <button class="ghost">Skip</button>
+      <button class="inverted"><i class="ph ph-download-simple"></i>Download PDF</button>
+    </div>
+  </div>
+  <div>
+    <div class="title">On dark · inverted</div>
+    <div class="dark-row row">
+      <button class="brand-on-dark">Show demo</button>
+      <button class="outline-on-dark">Contact us</button>
+    </div>
+  </div>
+  <div>
+    <div class="title">States</div>
+    <div class="row">
+      <button class="brand">Default</button>
+      <button class="brand" style="background:var(--brand-hover)">Hover</button>
+      <button class="brand" style="background:var(--brand-pressed)">Pressed</button>
+      <button class="brand" style="opacity:0.4;cursor:not-allowed">Disabled</button>
+    </div>
+  </div>
+</body></html>

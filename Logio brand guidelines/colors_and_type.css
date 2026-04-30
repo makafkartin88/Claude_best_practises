@@ -1,0 +1,335 @@
+/* =========================================================
+   Logio Design System — colors + typography tokens
+   Source: Figma "🟢 Logio _ Brand Base.fig" + Timesaver.pptx
+   ========================================================= */
+
+/* Instrument Sans + Roboto Mono — used sparingly in doc labels / tokens. Served from Google Fonts as these aren't part of the brand font bundle. */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Roboto+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* Host Grotesk — local brand font files. */
+@font-face { font-family: "Host Grotesk"; font-style: normal; font-weight: 300; font-display: swap; src: url("fonts/HostGrotesk-Light.ttf") format("truetype"); }
+@font-face { font-family: "Host Grotesk"; font-style: italic; font-weight: 300; font-display: swap; src: url("fonts/HostGrotesk-LightItalic.ttf") format("truetype"); }
+@font-face { font-family: "Host Grotesk"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/HostGrotesk-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Host Grotesk"; font-style: italic; font-weight: 400; font-display: swap; src: url("fonts/HostGrotesk-Italic.ttf") format("truetype"); }
+@font-face { font-family: "Host Grotesk"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/HostGrotesk-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Host Grotesk"; font-style: italic; font-weight: 500; font-display: swap; src: url("fonts/HostGrotesk-MediumItalic.ttf") format("truetype"); }
+@font-face { font-family: "Host Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/HostGrotesk-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Host Grotesk"; font-style: italic; font-weight: 600; font-display: swap; src: url("fonts/HostGrotesk-SemiBoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "Host Grotesk"; font-style: normal; font-weight: 700; font-display: swap; src: url("fonts/HostGrotesk-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Host Grotesk"; font-style: italic; font-weight: 700; font-display: swap; src: url("fonts/HostGrotesk-BoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "Host Grotesk"; font-style: normal; font-weight: 800; font-display: swap; src: url("fonts/HostGrotesk-ExtraBold.ttf") format("truetype"); }
+@font-face { font-family: "Host Grotesk"; font-style: italic; font-weight: 800; font-display: swap; src: url("fonts/HostGrotesk-ExtraBoldItalic.ttf") format("truetype"); }
+
+:root {
+  /* ─────────── Brand primary — Logio Green ─────────── */
+  --logio-green-10: #F2FEC9;
+  --logio-green-20: #E3FE98;
+  --logio-green-30: #CDF95D;
+  --logio-green-40: #B6EF2C;
+  --logio-green-50: #97D50D;
+  --logio-green-60: #7FBA06;   /* primary brand */
+  --logio-green-70: #58810A;
+  --logio-green-80: #48660E;
+  --logio-green-90: #3C5611;
+  --logio-green-95: #2B3D0C;
+
+  /* ─────────── Secondary — Teal (Veritico accent) ─────────── */
+  --teal-dark:    #1B7260;
+  --teal-base:    #28B195;
+  --teal-light:   #73C4B8;
+
+  /* ─────────── Accent — Orange (avatars, tags, highlight) ─────────── */
+  --orange-base:  #EF9155;
+  --orange-light: #EEE2CB;     /* warm sand — also used as surface */
+
+  /* ─────────── Accent — Violet (documentation/tokens only) ─────────── */
+  --violet-dark:  #6A4478;
+  --violet-light: #BDABC4;
+  --violet-bg:    rgba(123,97,255,0.16);   /* used in doc surfaces */
+
+  /* ─────────── Veritico sub‑brand modules ───────────
+     Source-of-truth base hexes supplied by the brand team:
+       STOCK  #0F8DAE  — deep ocean blue
+       PROMO  #FFA503  — amber
+       PRICE  #D1190D  — signal red
+       RANGE  #009687  — jade teal
+     Each module carries a 3‑step scale (dark / base / light) derived
+     by shifting lightness ±12%ish in OKLCH to keep hue stable.      */
+
+  /* STOCK — blue */
+  --veritico-stock-dark:  #0A6580;
+  --veritico-stock-base:  #0F8DAE;
+  --veritico-stock-light: #7DC5D8;
+  --veritico-stock-soft:  #E0F2F7;  /* tint for surfaces / badges */
+
+  /* PROMO — amber */
+  --veritico-promo-dark:  #C47D00;
+  --veritico-promo-base:  #FFA503;
+  --veritico-promo-light: #FFCF73;
+  --veritico-promo-soft:  #FFF1D6;
+
+  /* PRICE — red */
+  --veritico-price-dark:  #9A0E05;
+  --veritico-price-base:  #D1190D;
+  --veritico-price-light: #E8736A;
+  --veritico-price-soft:  #FBE1DE;
+
+  /* RANGE — jade */
+  --veritico-range-dark:  #006B5F;
+  --veritico-range-base:  #009687;
+  --veritico-range-light: #6BC3BA;
+  --veritico-range-soft:  #D8F0ED;
+
+  /* Backwards‑compatible aliases (legacy names used earlier in the kit). */
+  --veritico-stock: var(--veritico-stock-base);
+  --veritico-promo: var(--veritico-promo-base);
+  --veritico-price: var(--veritico-price-base);
+  --veritico-range: var(--veritico-range-base);
+  --veritico-flow:  var(--veritico-range-base); /* deprecated — FLOW was renamed to RANGE */
+
+  /* ─────────── Neutrals — warm beige scale ─────────── */
+  --bg-10: #F7F6F3;            /* lightest surface              */
+  --bg-20: #EEEBE4;            /* cream — hero surface          */
+  --bg-30: #E5E2DC;            /* panel                         */
+  --bg-40: #DDD9D1;            /* darker panel                  */
+  --bg-60: #C8C4BC;            /* divider on warm surfaces      */
+
+  /* cool / neutral greys (dev tools + UI chrome) */
+  --grey-05: #F1F2F4;
+  --grey-10: #E5E2DC;
+  --grey-20: #D9D5CD;
+  --grey-30: #B9B5AC;
+  --grey-40: #878278;          /* muted label text              */
+  --grey-50: #5F5B54;
+  --grey-60: #363430;
+  --grey-80: #181B1C;          /* near-black panel              */
+  --grey-90: #081219;          /* deepest dark surface          */
+
+  --black:       #000000;
+  --white:       #FFFFFF;
+
+  /* ─────────── Semantic tokens ─────────── */
+  --brand:           var(--logio-green-60);
+  --brand-hover:     var(--logio-green-70);
+  --brand-pressed:   var(--logio-green-80);
+  --brand-soft:      var(--logio-green-20);
+  --brand-on:        var(--white);
+
+  --bg:              var(--white);
+  --bg-subtle:       var(--bg-20);
+  --bg-muted:        var(--bg-30);
+  --bg-inverse:      var(--grey-90);
+
+  --surface:         var(--white);
+  --surface-raised:  var(--bg-10);
+  --surface-sunken:  var(--bg-30);
+
+  --fg:              var(--black);
+  --fg-muted:        var(--grey-50);
+  --fg-subtle:       var(--grey-40);
+  --fg-inverse:      var(--white);
+  --fg-brand:        var(--logio-green-70);
+
+  --border:          var(--bg-60);
+  --border-strong:   var(--grey-60);
+  --border-brand:    var(--brand);
+
+  --focus-ring:      rgba(127,186,6,0.32);
+
+  /* states */
+  --success:         var(--logio-green-60);
+  --warning:         var(--orange-base);
+  --danger:          var(--veritico-price);
+  --info:            var(--teal-base);
+
+  /* ─────────── Radii ─────────── */
+  --radius-xs:  6px;
+  --radius-sm:  8px;
+  --radius-md:  10px;       /* content radius */
+  --radius-lg:  12px;       /* wrapper radius */
+  --radius-xl:  16px;       /* container radius */
+  --radius-2xl: 24px;
+  --radius-3xl: 40px;
+  --radius-pill: 999px;     /* buttons, badges */
+
+  /* ─────────── Spacing (8-point grid) ─────────── */
+  --s-0:    0;
+  --s-1:    4px;
+  --s-2:    8px;
+  --s-3:    12px;
+  --s-4:    16px;
+  --s-5:    20px;
+  --s-6:    24px;
+  --s-8:    32px;
+  --s-10:   40px;
+  --s-12:   48px;
+  --s-16:   64px;
+  --s-20:   80px;
+  --s-24:   96px;
+  --s-32:  128px;
+
+  /* ─────────── Shadows ─────────── */
+  --shadow-xs: 0 1px 2px rgba(16,24,40,0.03);
+  --shadow-sm: 0 1px 2px rgba(16,24,40,0.03), 0 1px 3px rgba(16,24,40,0.08);
+  --shadow-md: 0 2px 4px rgba(16,24,40,0.04), 0 4px 10px rgba(16,24,40,0.06);
+  --shadow-lg: 0 8px 24px rgba(16,24,40,0.08), 0 2px 6px rgba(16,24,40,0.04);
+  --shadow-xl: 0 24px 48px rgba(16,24,40,0.10), 0 4px 12px rgba(16,24,40,0.06);
+
+  /* ─────────── Motion ─────────── */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast:     120ms;
+  --t-base:     200ms;
+  --t-slow:     360ms;
+
+  /* ─────────── Type families ─────────── */
+  --font-display: "Host Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans:    "Host Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-label:   "Instrument Sans", "Host Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* =========================================================
+   Base typography
+   --------------------------------------------------------- */
+html { color: var(--fg); background: var(--bg); }
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--fg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─────────── Display / Headline — Host Grotesk ─────────── */
+.t-hero {
+  font-family: var(--font-display);
+  font-weight: 700;                    /* Bold — not ExtraBold — matches Figma */
+  font-size: clamp(56px, 8vw, 120px);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+}
+.t-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.t-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+.t-h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.t-h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+}
+.t-h5 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+/* ─────────── Body ─────────── */
+.t-lead {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--fg-muted);
+}
+.t-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.t-body-sm {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.t-caption {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--fg-subtle);
+}
+
+/* ─────────── Numbers (Hero stats — 160+/48/32) ─────────── */
+.t-number-l {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  font-feature-settings: "tnum" 1;
+}
+.t-number-m {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-feature-settings: "tnum" 1;
+}
+.t-number-s {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1;
+  font-feature-settings: "tnum" 1;
+}
+
+/* ─────────── CTA / Buttons ─────────── */
+.t-cta-l { font: 500 18px/1 var(--font-sans); }
+.t-cta-m { font: 500 16px/1 var(--font-sans); }
+.t-cta-s { font: 500 14px/1 var(--font-sans); }
+
+/* ─────────── Nav / breadcrumbs / chips ─────────── */
+.t-nav     { font: 500 15px/1.3 var(--font-sans); }
+.t-crumb   { font: 400 13px/1.3 var(--font-sans); color: var(--fg-muted); letter-spacing: 0.01em; }
+.t-chip    { font: 500 13px/1 var(--font-sans); letter-spacing: 0.01em; }
+
+/* ─────────── Labels / documentation ─────────── */
+.t-label   { font: 700 14px/1.4 var(--font-label); letter-spacing: 0.02em; }
+.t-overline{ font: 700 12px/1.2 var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-subtle); }
+.t-code    { font: 400 12px/1.3 var(--font-mono); color: var(--violet-dark); }
+
+/* ─────────── Base element defaults ─────────── */
+h1 { font: 700 72px/1.02 var(--font-display); letter-spacing: -0.02em; margin: 0; }
+h2 { font: 700 48px/1.05 var(--font-display); letter-spacing: -0.015em; margin: 0; }
+h3 { font: 600 32px/1.15 var(--font-display); letter-spacing: -0.01em; margin: 0; }
+h4 { font: 600 24px/1.25 var(--font-display); margin: 0; }
+h5 { font: 600 20px/1.3  var(--font-display); margin: 0; }
+p  { font: 400 16px/1.55 var(--font-sans);   margin: 0; }
+code, pre { font-family: var(--font-mono); font-size: 0.875em; }
+
+/* ─────────── Utility ─────────── */
+.bg-cream   { background: var(--bg-20); }
+.bg-sand    { background: var(--orange-light); }
+.bg-green   { background: var(--brand); color: var(--brand-on); }
+.bg-teal    { background: var(--teal-dark); color: var(--white); }
+.bg-ink     { background: var(--grey-90); color: var(--white); }
+
+.fg-brand   { color: var(--brand); }
+.fg-muted   { color: var(--fg-muted); }
+.fg-subtle  { color: var(--fg-subtle); }

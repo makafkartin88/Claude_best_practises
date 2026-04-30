@@ -1,0 +1,18 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Imagery</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 0; background: var(--white); font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 0; height: 200px; }
+  .cell { position: relative; overflow: hidden; }
+  .cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cell.teal::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(27,114,96,0.55), rgba(40,177,149,0.35)); mix-blend-mode: multiply; }
+  .cap { position: absolute; left: 12px; bottom: 10px; font: 500 11px/1 var(--font-label); color: var(--white); letter-spacing: 0.06em; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,0.4); }
+</style></head>
+<body>
+  <div class="grid">
+    <div class="cell"><img src="../assets/photos/office-team.jpg" alt=""><div class="cap">Warm · team</div></div>
+    <div class="cell teal"><img src="../assets/photos/team-meeting.jpg" alt=""><div class="cap">Teal wash</div></div>
+    <div class="cell"><img src="../assets/photos/warehouse.jpg" alt=""><div class="cap">Operations</div></div>
+  </div>
+</body></html>

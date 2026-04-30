@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Avatar & Divider</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px; background: var(--white); font-family: var(--font-sans); display: flex; flex-direction: column; gap: 22px; }
+  .title { font: 700 11px/1 var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 10px; }
+  .row { display: flex; gap: 14px; align-items: center; }
+  .av { border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font: 600 14px/1 var(--font-display); color: var(--white); }
+  .xs { width: 28px; height: 28px; font-size: 11px; }
+  .sm { width: 36px; height: 36px; font-size: 13px; }
+  .md { width: 48px; height: 48px; font-size: 16px; }
+  .lg { width: 64px; height: 64px; font-size: 20px; }
+  .stack { display: flex; }
+  .stack .av { border: 2px solid var(--white); margin-left: -10px; }
+  .stack .av:first-child { margin-left: 0; }
+  .divider { height: 1px; background: var(--bg-40); }
+  .divider-str { height: 1px; background: var(--border-strong); }
+  .divider-dot { height: 1px; background: linear-gradient(to right, var(--bg-60) 50%, transparent 50%); background-size: 8px 1px; }
+</style></head>
+<body>
+  <div>
+    <div class="title">Avatars · sizes</div>
+    <div class="row">
+      <span class="av xs" style="background:var(--orange-base)">TK</span>
+      <span class="av sm" style="background:var(--teal-dark)">JL</span>
+      <span class="av md" style="background:var(--brand)">AL</span>
+      <span class="av lg" style="background:var(--violet-dark)">MV</span>
+    </div>
+  </div>
+  <div>
+    <div class="title">Stacked</div>
+    <div class="stack">
+      <span class="av sm" style="background:var(--brand)">AL</span>
+      <span class="av sm" style="background:var(--orange-base)">TK</span>
+      <span class="av sm" style="background:var(--teal-dark)">JL</span>
+      <span class="av sm" style="background:var(--violet-dark)">MV</span>
+      <span class="av sm" style="background:var(--bg-40);color:var(--fg)">+3</span>
+    </div>
+  </div>
+  <div>
+    <div class="title">Dividers</div>
+    <div class="divider"></div>
+    <div style="height:6px"></div>
+    <div class="divider-str"></div>
+    <div style="height:6px"></div>
+    <div class="divider-dot"></div>
+  </div>
+</body></html>

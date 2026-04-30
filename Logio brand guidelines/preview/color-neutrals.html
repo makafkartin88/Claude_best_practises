@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Neutrals</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--white); font-family: var(--font-sans); }
+  .stack { display: flex; flex-direction: column; gap: 10px; }
+  .group-title { font: 700 11px/1 var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 10px; }
+  .bar { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+  .chip { aspect-ratio: 2.2 / 1; border-radius: 10px; display: flex; flex-direction: column; justify-content: flex-end; padding: 10px; font: 500 10px/1 var(--font-label); }
+  .chip .hex { font: 400 9px/1 var(--font-mono); opacity: 0.75; margin-top: 3px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+</style></head>
+<body>
+  <div class="row">
+    <div>
+      <div class="group-title">Warm neutrals · marketing</div>
+      <div class="bar">
+        <div class="chip" style="background:#F7F6F3;color:#363430;border:1px solid #E5E2DC"><span>bg-10</span><span class="hex">F7F6F3</span></div>
+        <div class="chip" style="background:#EEEBE4;color:#363430"><span>bg-20</span><span class="hex">EEEBE4</span></div>
+        <div class="chip" style="background:#E5E2DC;color:#363430"><span>bg-30</span><span class="hex">E5E2DC</span></div>
+        <div class="chip" style="background:#DDD9D1;color:#363430"><span>bg-40</span><span class="hex">DDD9D1</span></div>
+        <div class="chip" style="background:#C8C4BC;color:#363430"><span>bg-60</span><span class="hex">C8C4BC</span></div>
+        <div class="chip" style="background:#EEE2CB;color:#6A4478"><span>sand</span><span class="hex">EEE2CB</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="group-title">Cool neutrals · product</div>
+      <div class="bar">
+        <div class="chip" style="background:#F1F2F4;color:#363430;border:1px solid #E5E2DC"><span>grey-05</span><span class="hex">F1F2F4</span></div>
+        <div class="chip" style="background:#B9B5AC;color:#fff"><span>grey-30</span><span class="hex">B9B5AC</span></div>
+        <div class="chip" style="background:#878278;color:#fff"><span>grey-40</span><span class="hex">878278</span></div>
+        <div class="chip" style="background:#5F5B54;color:#fff"><span>grey-50</span><span class="hex">5F5B54</span></div>
+        <div class="chip" style="background:#363430;color:#fff"><span>grey-60</span><span class="hex">363430</span></div>
+        <div class="chip" style="background:#081219;color:#fff"><span>grey-90</span><span class="hex">081219</span></div>
+      </div>
+    </div>
+  </div>
+</body></html>

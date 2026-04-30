@@ -11,72 +11,148 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#83BB26',
-                    }
+                        primary: '#7FBA06',
+                    },
+                    fontFamily: {
+                        sans: ['Host Grotesk', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
                 }
             }
         }
     </script>
 
     <style>
-        .fade-in {
-            animation: fadeIn 0.4s ease-in-out forwards;
+        /* ── Host Grotesk @font-face ── */
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-LightItalic.ttf') format('truetype'); font-weight: 300; font-style: italic; font-display: swap; }
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-MediumItalic.ttf') format('truetype'); font-weight: 500; font-style: italic; font-display: swap; }
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-SemiBoldItalic.ttf') format('truetype'); font-weight: 600; font-style: italic; font-display: swap; }
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-ExtraBold.ttf') format('truetype'); font-weight: 800; font-style: normal; font-display: swap; }
+        @font-face { font-family: 'Host Grotesk'; src: url('./Logio brand guidelines/fonts/HostGrotesk-ExtraBoldItalic.ttf') format('truetype'); font-weight: 800; font-style: italic; font-display: swap; }
+
+        /* ── Logio Design Tokens ── */
+        :root {
+            /* Brand */
+            --brand:         #7FBA06;
+            --brand-hover:   #58810A;
+            --brand-pressed: #48660E;
+            --focus-ring:    rgba(127, 186, 6, 0.32);
+
+            /* Warm neutrals */
+            --warm-10: #F7F6F3;
+            --warm-20: #EEEBE4;
+            --warm-30: #E5E2DC;
+            --warm-40: #DDD9D1;
+            --warm-60: #C8C4BC;
+            --grey-30: #B9B5AC;
+            --grey-40: #878278;
+            --grey-50: #5F5B54;
+            --grey-60: #363430;
+            --grey-90: #081219;
+
+            /* Shadows (cool-tinted) */
+            --shadow-xs: 0 1px 2px rgba(8,18,25,0.06);
+            --shadow-sm: 0 1px 3px rgba(8,18,25,0.08), 0 1px 2px rgba(8,18,25,0.06);
+            --shadow-md: 0 4px 8px rgba(8,18,25,0.08), 0 2px 4px rgba(8,18,25,0.06);
+            --shadow-lg: 0 12px 24px rgba(8,18,25,0.10), 0 4px 8px rgba(8,18,25,0.06);
+            --shadow-xl: 0 24px 48px rgba(8,18,25,0.12), 0 8px 16px rgba(8,18,25,0.08);
+
+            /* Motion */
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+            --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+            --dur-fast: 120ms;
+            --dur-base: 200ms;
+            --dur-slow: 360ms;
         }
+
+        /* ── Global overrides ── */
+        body {
+            background-color: var(--warm-10);
+            color: var(--grey-60);
+        }
+
+        /* Warm-neutral replacements for Tailwind slate utilities used on bg/border */
+        .bg-slate-50  { background-color: var(--warm-10) !important; }
+        .bg-slate-100 { background-color: var(--warm-20) !important; }
+        .bg-slate-200 { background-color: var(--warm-30) !important; }
+        .border-slate-100 { border-color: var(--warm-20) !important; }
+        .border-slate-200 { border-color: var(--warm-30) !important; }
+        .text-slate-400 { color: var(--grey-40) !important; }
+        .text-slate-500 { color: var(--grey-50) !important; }
+        .text-slate-600 { color: var(--grey-50) !important; }
+        .text-slate-700 { color: var(--grey-60) !important; }
+        .text-slate-800 { color: var(--grey-90) !important; }
+
+        /* Nav border */
+        .border-slate-200 { border-color: var(--warm-30) !important; }
+
+        /* Selection */
+        ::selection { background-color: rgba(127, 186, 6, 0.18); }
+
+        /* ── Animations ── */
+        .fade-in { animation: fadeIn 0.4s var(--ease-out) forwards; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            to   { opacity: 1; transform: translateY(0); }
         }
-        
+
+        /* ── Toast ── */
         .toast {
             position: fixed;
             bottom: 20px;
             right: 20px;
             transform: translateY(100px);
             opacity: 0;
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.3s var(--ease-out);
             z-index: 1000;
         }
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
+        .toast.show { transform: translateY(0); opacity: 1; }
 
+        /* ── Scrollbar hide ── */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        .mcp-ui-bg { background-color: #0f172a; }
+        /* ── MCP UI (dark code panel — unchanged) ── */
+        .mcp-ui-bg     { background-color: #0f172a; }
         .mcp-ui-border { border-color: #1e293b; }
-        .mcp-ui-input { background-color: #020617; border: 1px solid #1e293b; color: #cbd5e1; }
-        .mcp-ui-label { color: #94a3b8; font-weight: 600; font-size: 0.85rem; }
-        .mcp-ui-tab-active { background-color: #83BB26; color: #ffffff; }
+        .mcp-ui-input  { background-color: #020617; border: 1px solid #1e293b; color: #cbd5e1; }
+        .mcp-ui-label  { color: #94a3b8; font-weight: 600; font-size: 0.85rem; }
+        .mcp-ui-tab-active   { background-color: var(--brand); color: #ffffff; }
         .mcp-ui-tab-inactive { background-color: #1e293b; color: #94a3b8; }
-        
+
+        /* ── kbd ── */
         kbd {
-            background-color: #f8fafc;
-            border-radius: 4px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-            color: #334155;
+            background-color: var(--warm-20);
+            border-radius: 6px;
+            border: 1px solid var(--warm-60);
+            box-shadow: var(--shadow-xs);
+            color: var(--grey-60);
             display: inline-block;
             font-family: ui-monospace, monospace;
             font-size: 0.85em;
-            font-weight: 700;
+            font-weight: 600;
             line-height: 1.2;
-            padding: 2px 6px;
+            padding: 2px 7px;
             white-space: nowrap;
             margin: 0 2px;
         }
 
+        /* ── code ── */
         code {
-            background-color: #f7fee7;
-            color: #3f6212;
-            padding: 0.2rem 0.4rem;
-            border-radius: 0.25rem;
+            background-color: #F3EFF6;
+            color: #6A4478;
+            padding: 0.2rem 0.45rem;
+            border-radius: 6px;
             font-family: ui-monospace, monospace;
-            font-size: 0.9em;
-            border: 1px solid #d9f99d;
+            font-size: 0.88em;
+            border: 1px solid #BDABC4;
         }
-
         pre code {
             background-color: transparent;
             border: none;
@@ -84,19 +160,36 @@
             color: inherit;
         }
 
+        /* ── Step number ── */
         .instruction-step { display: flex; align-items: flex-start; margin-bottom: 1.5rem; }
         .step-number {
-            background-color: #83BB26; color: white; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; border-radius: 9999px; font-size: 0.9rem; font-weight: 800; margin-right: 1.25rem; flex-shrink: 0; box-shadow: 0 2px 4px rgba(131, 187, 38, 0.3);
+            background-color: var(--brand);
+            color: white;
+            width: 2rem; height: 2rem;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 9999px;
+            font-size: 0.9rem; font-weight: 800;
+            margin-right: 1.25rem; flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(127, 186, 6, 0.35);
         }
+
+        /* ── Logio shadow utility classes ── */
+        .shadow-sm  { box-shadow: var(--shadow-sm) !important; }
+        .shadow-lg  { box-shadow: var(--shadow-lg) !important; }
+        .shadow-xl  { box-shadow: var(--shadow-xl) !important; }
+        .shadow-2xl { box-shadow: var(--shadow-xl) !important; }
+
+        /* ── Hover transition refinement ── */
+        a, button { transition-timing-function: var(--ease-out); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-lime-200">
+<body class="font-sans antialiased">
 
     <!-- Navigace -->
     <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 py-4">
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
             <div onclick="showView('hub')" class="flex items-center space-x-3 cursor-pointer">
-                <div class="h-10 px-4 bg-primary rounded-lg flex items-center justify-center text-white text-xl font-bold shadow-md shadow-primary/20">Logio</div>
+                <img src="./Logio brand guidelines/assets/logo/logio-new-logo-black-rgb.png" alt="Logio" class="h-10 w-auto">
                 <span class="text-xl font-black tracking-tight text-slate-900 uppercase italic">AI <span class="text-primary">Practices</span></span>
             </div>
             <!-- Claude nav -->

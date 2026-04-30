@@ -1,0 +1,52 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Logo</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px; background: var(--bg-20); display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; font-family: var(--font-sans); }
+  .group { display: flex; flex-direction: column; gap: 10px; }
+  .tag { font: 500 10px/1 var(--font-label); text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-subtle); display: flex; justify-content: space-between; align-items: center; }
+  .tag .hex { font: 400 10px/1 var(--font-mono); }
+  .swatch { display: flex; align-items: center; justify-content: center; border-radius: 12px; padding: 28px 32px; min-height: 132px; border: 1px solid transparent; }
+  .swatch img { display: block; max-width: 170px; width: 100%; height: auto; }
+  .on-white { background: var(--white); border-color: var(--bg-30); }
+  .on-green { background: var(--brand); }
+  .on-ink   { background: var(--grey-90); }
+</style></head>
+<body>
+  <div class="group">
+    <div class="tag"><span>Green · primary</span><span class="hex">#7FBA06</span></div>
+    <div class="swatch on-white">
+      <img src="../assets/logo/logio-new-logo-green-rgb.png" alt="Logio">
+    </div>
+  </div>
+  <div class="group">
+    <div class="tag"><span>Black · on light</span><span class="hex">#000000</span></div>
+    <div class="swatch on-white">
+      <img src="../assets/logo/logio-new-logo-black-rgb.png" alt="Logio">
+    </div>
+  </div>
+  <div class="group">
+    <div class="tag"><span>White · on green</span><span class="hex">#FFFFFF</span></div>
+    <div class="swatch on-green">
+      <img src="../assets/logo/logio-new-logo-white-rgb.png" alt="Logio">
+    </div>
+  </div>
+  <div class="group">
+    <div class="tag"><span>White · on ink</span><span class="hex">#1A1A1A</span></div>
+    <div class="swatch on-ink">
+      <img src="../assets/logo/logio-new-logo-white-rgb.png" alt="Logio">
+    </div>
+  </div>
+  <div class="group">
+    <div class="tag"><span>Green · on ink</span><span class="hex">ok</span></div>
+    <div class="swatch on-ink">
+      <img src="../assets/logo/logio-new-logo-green-rgb.png" alt="Logio">
+    </div>
+  </div>
+  <div class="group">
+    <div class="tag"><span>Black · on cream</span><span class="hex">bg-20</span></div>
+    <div class="swatch" style="background:var(--bg-30);border-color:var(--bg-40)">
+      <img src="../assets/logo/logio-new-logo-black-rgb.png" alt="Logio">
+    </div>
+  </div>
+</body></html>
