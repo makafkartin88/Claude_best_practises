@@ -201,7 +201,6 @@
                 <a href="#tools" class="hover:text-primary transition-colors">Nástroje</a>
                 <a href="#tips" class="hover:text-primary transition-colors">Tipy</a>
                 <a href="#anatomy" class="hover:text-primary transition-colors">Anatomie</a>
-                <a href="#library" class="hover:text-primary transition-colors">Prompty</a>
             </div>
             <!-- Gemini nav -->
             <div id="nav-gemini" class="hidden items-center space-x-6 text-sm font-bold uppercase tracking-widest text-slate-500">
@@ -324,6 +323,107 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <!-- Governance -->
+            <section class="max-w-4xl mx-auto w-full pb-24 space-y-5 fade-in">
+
+                <div class="border-t border-slate-200 pt-12 text-center">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Data Governance</p>
+                    <h2 class="text-2xl font-black text-slate-900 italic">Jak pracovat s daty <span class="text-primary">bezpečně</span></h2>
+                </div>
+
+                <!-- Enterprise badges -->
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-2xl px-5 py-3 flex items-center gap-3">
+                        <span class="text-emerald-500 font-black text-xl shrink-0">✓</span>
+                        <div>
+                            <p class="font-bold text-emerald-900 text-sm">Gemini Business / Enterprise</p>
+                            <p class="text-xs text-emerald-700 mt-0.5">Data nejsou použita pro trénink · GDPR · DPA · EU residency</p>
+                        </div>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-2xl px-5 py-3 flex items-center gap-3">
+                        <span class="text-emerald-500 font-black text-xl shrink-0">✓</span>
+                        <div>
+                            <p class="font-bold text-emerald-900 text-sm">Claude Teams / Enterprise</p>
+                            <p class="text-xs text-emerald-700 mt-0.5">Data nejsou použita pro trénink · SOC 2 Type II · GDPR</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 sloupce -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white border border-emerald-200 rounded-2xl p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center font-black text-xs shrink-0">✓</span>
+                            <h3 class="font-black text-slate-900">Bezpečné</h3>
+                        </div>
+                        <ul class="space-y-1.5 text-sm text-slate-700">
+                            <li class="flex items-start gap-2"><span class="text-emerald-500 shrink-0">●</span> Anonymizovaná & agregovaná data</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500 shrink-0">●</span> Syntetická a demo data</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500 shrink-0">●</span> Interní metodiky a procesy</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white border border-amber-200 rounded-2xl p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-6 h-6 bg-amber-400 text-white rounded-full flex items-center justify-center font-black text-xs shrink-0">!</span>
+                            <h3 class="font-black text-slate-900">S rozvahou</h3>
+                        </div>
+                        <ul class="space-y-1.5 text-sm text-slate-700">
+                            <li class="flex items-start gap-2"><span class="text-amber-500 shrink-0">●</span> Metriky bez identifikátorů</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 shrink-0">●</span> Interní dokumentace pod NDA</li>
+                            <li class="flex items-start gap-2"><span class="text-amber-500 shrink-0">●</span> Finanční data bez názvů firem</li>
+                        </ul>
+                        <p class="text-xs text-amber-700 mt-3 pt-2.5 border-t border-amber-100 font-medium">Preferuj anonymizaci, konzultuj právní tým.</p>
+                    </div>
+                    <div class="bg-white border border-red-200 rounded-2xl p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center font-black text-xs shrink-0">✕</span>
+                            <h3 class="font-black text-slate-900">Vyhnout se</h3>
+                        </div>
+                        <ul class="space-y-1.5 text-sm text-slate-700">
+                            <li class="flex items-start gap-2"><span class="text-red-500 shrink-0">●</span> Jména, e-maily, telefony zákazníků</li>
+                            <li class="flex items-start gap-2"><span class="text-red-500 shrink-0">●</span> Smlouvy s identifikovatelnými subjekty</li>
+                            <li class="flex items-start gap-2"><span class="text-red-500 shrink-0">●</span> Data explicitně zakázaná v NDA</li>
+                        </ul>
+                        <p class="text-xs text-red-700 mt-3 pt-2.5 border-t border-red-100 font-medium">Anonymizuj nebo použij syntetická data.</p>
+                    </div>
+                </div>
+
+                <!-- Syntetická data + NDA -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div class="md:col-span-3 bg-slate-900 rounded-2xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-xl shrink-0">⚗️</span>
+                            <div>
+                                <p class="text-[10px] font-black uppercase tracking-widest text-primary">Zlaté pravidlo</p>
+                                <p class="font-black text-white text-base">Syntetická data pro citlivé projekty</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="bg-slate-800 rounded-xl p-3 border border-white/5">
+                                <p class="text-primary font-black text-xs mb-1">1. Popiš strukturu</p>
+                                <p class="text-slate-400 text-xs leading-relaxed">Sdílej schéma a pravidla — bez skutečných záznamů.</p>
+                            </div>
+                            <div class="bg-slate-800 rounded-xl p-3 border border-white/5">
+                                <p class="text-primary font-black text-xs mb-1">2. Generuj & validuj</p>
+                                <p class="text-slate-400 text-xs leading-relaxed">Claude vytvoří dataset zachovávající klíčové vzorce.</p>
+                            </div>
+                            <div class="bg-slate-800 rounded-xl p-3 border border-white/5">
+                                <p class="text-primary font-black text-xs mb-1">3. Postav & přenes</p>
+                                <p class="text-slate-400 text-xs leading-relaxed">Model postav na syntetice, přenes na reálná data.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 bg-amber-50 border border-amber-100 rounded-2xl p-5 flex flex-col gap-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-amber-500 text-lg shrink-0">⚖️</span>
+                            <p class="font-black text-amber-900 text-sm">NDA & firemní předplatné</p>
+                        </div>
+                        <p class="text-xs text-amber-800 leading-relaxed">Enterprise Gemini i Claude data nepředávají třetím stranám ani pro trénink — NDA toto použití obecně nezakazuje. Vždy ale zkontroluj konkrétní formulaci smlouvy a v pochybnostech anonymizuj.</p>
+                    </div>
+                </div>
+
             </section>
         </div>
 
@@ -695,7 +795,7 @@
                                 <p class="text-sm text-slate-900 font-bold mb-1">Příklad:</p>
                                 <p class="text-sm text-slate-600">Interní plugin specifikovaný výhradně pro <em>Základní analýzy Logio</em>. Zavoláte skill a agent automaticky zná a aplikuje vaši metodiku.</p>
                             </div>
-                            <div class="mt-auto bg-slate-50 p-5 rounded-2xl border border-slate-100">
+                            <div class="mt-4 bg-slate-50 p-5 rounded-2xl border border-slate-100">
                                 <h4 class="font-bold text-emerald-800 uppercase tracking-widest text-[11px] mb-3 border-b border-slate-200 pb-2">Postup založení</h4>
                                 <ul class="space-y-2 text-sm text-slate-700 font-medium">
                                     <li class="flex items-start gap-2"><span class="text-emerald-500 mt-0.5">1.</span> <div><strong>Name & Trigger:</strong> Pojmenování a příkaz ke spuštění.</div></li>
@@ -707,8 +807,11 @@
                             </div>
                         </div>
                         <!-- Vpravo: Doporučené Skills -->
-                        <div class="flex-1">
-                            <h4 class="font-bold text-slate-900 uppercase tracking-widest text-[11px] mb-4 border-b border-slate-200 pb-2">Doporučené Skills</h4>
+                        <div class="flex-1 flex flex-col">
+                            <div class="flex items-center justify-between mb-4 border-b border-slate-200 pb-2">
+                                <h4 class="font-bold text-slate-900 uppercase tracking-widest text-[11px]">Doporučené Skills</h4>
+                                <a href="https://www.aitmpl.com/skills/" target="_blank" class="text-xs text-primary font-bold hover:underline flex items-center gap-1">Celý katalog <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                            </div>
                             <div class="grid grid-cols-2 gap-2">
                                 <div class="bg-slate-50 rounded-xl p-3 flex flex-col gap-1.5 border border-slate-100">
                                     <div class="flex items-center gap-2">
@@ -736,19 +839,23 @@
                                 </div>
                                 <div class="bg-slate-50 rounded-xl p-3 flex flex-col gap-1.5 border border-slate-100">
                                     <div class="flex items-center gap-2">
-                                        <span class="w-6 h-6 bg-pink-100 text-pink-600 rounded-md flex items-center justify-center text-sm flex-shrink-0">🎨</span>
-                                        <p class="font-bold text-slate-900 text-sm">Frontend Design</p>
-                                    </div>
-                                    <p class="text-xs text-slate-500 leading-relaxed">Produkční UI na první pokus — estetická rozhodnutí před kódem.</p>
-                                    <a href="https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design" target="_blank" class="text-xs text-primary font-bold hover:underline">GitHub →</a>
-                                </div>
-                                <div class="bg-slate-50 rounded-xl p-3 flex flex-col gap-1.5 border border-slate-100 col-span-2">
-                                    <div class="flex items-center gap-2">
                                         <span class="w-6 h-6 bg-slate-200 text-slate-600 rounded-md flex items-center justify-center text-sm flex-shrink-0">🕵️</span>
                                         <p class="font-bold text-slate-900 text-sm">Code Review Agents</p>
                                     </div>
                                     <p class="text-xs text-slate-500 leading-relaxed">Paralelní sub-agenti: security, performance, style a testy najednou.</p>
                                     <a href="https://github.com/anthropics/claude-code/tree/main/plugins/code-review" target="_blank" class="text-xs text-primary font-bold hover:underline">GitHub →</a>
+                                </div>
+                            </div>
+                            <!-- Vlastní skilly callout -->
+                            <div class="mt-4 bg-emerald-50 border border-emerald-200 rounded-2xl p-4 flex items-start gap-3">
+                                <span class="text-xl flex-shrink-0 mt-0.5">⚡</span>
+                                <div>
+                                    <p class="text-sm font-black text-emerald-900 mb-1">Největší síla: vlastní skilly</p>
+                                    <p class="text-xs text-emerald-800 leading-relaxed mb-2.5">Nejcennější skilly si vytvoříš sám — přesně pro svůj proces nebo metodiku. Řekni Claudovi přirozenou češtinou co chceš zautomatizovat a on sám zavolá <code class="bg-emerald-100 px-1 rounded font-mono">create-skill</code>. Hotový skill pak kdykoli spustíš:</p>
+                                    <div class="bg-emerald-800 rounded-lg px-3.5 py-2 inline-flex items-center gap-2">
+                                        <span class="text-emerald-500 font-mono text-xs">›</span>
+                                        <span class="text-emerald-200 font-mono text-sm font-bold">/jmenovaskillu</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -963,108 +1070,31 @@ Shrnutí musí obsahovat: (1) původní cíl/problém, (2) klíčová rozhodnut�
 
             </div>
 
-            <!-- Tip pod gridem -->
-            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex items-start gap-3">
-                <span class="text-slate-400 text-lg mt-0.5">💡</span>
-                <p class="text-sm text-slate-600 leading-relaxed">Nemusíš použít všechny části v každém promptu — ale čím víc jich zahrneš, tím předvídatelnější a kvalitnější výstup dostaneš.</p>
+            <!-- Tip pod gridem + ukázkový prompt -->
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-10 relative group">
+                <button onclick="utils.copyPrompt(this)" class="copy-btn absolute top-6 right-6 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 text-xs px-3 py-2 rounded-lg flex items-center gap-2 font-bold tracking-wide uppercase transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                    <span class="btn-text">Kopírovat</span>
+                </button>
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-500">Ukázkový prompt · všech 6 bloků v praxi</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-6 gap-px bg-slate-700/40 rounded-2xl overflow-hidden mb-6 text-xs font-bold uppercase tracking-widest">
+                    <div class="bg-slate-800 px-3 py-2 text-orange-400">1 Role</div>
+                    <div class="bg-slate-800 px-3 py-2 text-blue-400">2 Task</div>
+                    <div class="bg-slate-800 px-3 py-2 text-purple-400">3 Context</div>
+                    <div class="bg-slate-800 px-3 py-2 text-emerald-400">4 Reasoning</div>
+                    <div class="bg-slate-800 px-3 py-2 text-red-400">5 Stop</div>
+                    <div class="bg-slate-800 px-3 py-2 text-primary">6 Output</div>
+                </div>
+                <div class="bg-black/50 rounded-2xl p-6 border border-white/5">
+                    <pre class="font-mono text-sm leading-loose whitespace-pre-wrap" id="anatomy-example-prompt"><span class="text-orange-300">Act as a senior Power BI architect.</span> <span class="text-blue-300">Review the following DAX measure for performance bottlenecks and suggest an optimized version using variables (VAR) and efficient filter context evaluation.</span> <span class="text-purple-300">The measure runs on a 10M-row fact table and currently takes 8+ seconds to refresh in visuals. We use DirectQuery mode.</span> <span class="text-emerald-300">The goal is sub-2s render time — prioritize CALCULATE and SUMX rewrites over stylistic changes.</span> <span class="text-red-300">Only stop when you have confirmed the rewrite handles all existing edge cases from the original.</span> <span class="text-primary">Present a side-by-side comparison of old vs. new DAX with a short explanation of each change. No prose intro needed.</span>
+
+<span style="color:#64748b">[VLOŽTE SVŮJ DAX ZDE]</span></pre>
+                </div>
+                <p class="text-xs text-slate-500 mt-4 font-medium">Nemusíš použít všechny bloky v každém promptu — ale čím víc jich zahrneš, tím předvídatelnější výstup dostaneš.</p>
             </div>
 
-        </section>
-
-        <!-- Prompt Library -->
-        <section id="library" class="space-y-10 fade-in scroll-mt-24">
-            <div class="border-b border-slate-200 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                    <h2 class="text-4xl font-black text-slate-900 italic">Knihovna <span class="text-primary">Promptů</span></h2>
-                    <p class="text-slate-500 text-lg font-medium mt-2">Ověřené příkazy připravené k okamžitému zkopírování.</p>
-                </div>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                <!-- Prompt 1 -->
-                <div class="bg-slate-900 p-8 rounded-3xl shadow-xl border border-slate-800 flex flex-col h-full relative group">
-                    <button onclick="utils.copyPrompt(this)" class="copy-btn absolute top-6 right-6 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 text-xs px-3 py-2 rounded-lg flex items-center gap-2 z-10 font-bold tracking-wide uppercase transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-                        <span class="btn-text">Kopírovat</span>
-                    </button>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center text-2xl">📅</div>
-                        <h3 class="font-black text-white text-xl">1. Kalendářní tabulka</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-6">Základní stavební kámen. Vytvoří komplexní kalendář propojitelný s fakty a dynamicky označí pracovní dny.</p>
-                    <div class="bg-black/50 p-5 rounded-2xl flex-grow overflow-x-auto border border-white/5">
-                        <pre class="font-mono text-lime-400 text-xs leading-relaxed whitespace-pre-wrap"><code>Create a comprehensive DAX Date table. Include columns for Date, Year, Quarter, Month Name, Month Number, Week Number, and Day of Week. Add a boolean column for IsWorkingDay (assuming Monday-Friday). Before generating the code, please outline your plan for my approval.</code></pre>
-                    </div>
-                </div>
-
-                <!-- Prompt 2 -->
-                <div class="bg-slate-900 p-8 rounded-3xl shadow-xl border border-slate-800 flex flex-col h-full relative group">
-                    <button onclick="utils.copyPrompt(this)" class="copy-btn absolute top-6 right-6 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 text-xs px-3 py-2 rounded-lg flex items-center gap-2 z-10 font-bold tracking-wide uppercase transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-                        <span class="btn-text">Kopírovat</span>
-                    </button>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center text-2xl">⏳</div>
-                        <h3 class="font-black text-white text-xl">2. Time Intelligence</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-6">Vygeneruje běžné metriky pro porovnání v čase (YTD, YoY) z vašeho existujícího základního měřítka.</p>
-                    <div class="bg-black/50 p-5 rounded-2xl flex-grow overflow-x-auto border border-white/5">
-                        <pre class="font-mono text-lime-400 text-xs leading-relaxed whitespace-pre-wrap"><code>Based on the existing measure [Total Sales], generate standard time intelligence measures including: YTD, QTD, MTD, Previous Year (PY), YoY variance in absolute numbers, and YoY variance percentage. Please explain your approach before writing the DAX.</code></pre>
-                    </div>
-                </div>
-
-                <!-- Prompt 3 -->
-                <div class="bg-slate-900 p-8 rounded-3xl shadow-xl border border-slate-800 flex flex-col h-full relative group">
-                    <button onclick="utils.copyPrompt(this)" class="copy-btn absolute top-6 right-6 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 text-xs px-3 py-2 rounded-lg flex items-center gap-2 z-10 font-bold tracking-wide uppercase transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-                        <span class="btn-text">Kopírovat</span>
-                    </button>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center text-2xl">🧹</div>
-                        <h3 class="font-black text-white text-xl">3. Úklid názvů</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-6">Automatické přejmenování sloupců (odstranění podtržítek atd.) pro perfektní vizuální konzistenci v reportech.</p>
-                    <div class="bg-black/50 p-5 rounded-2xl flex-grow overflow-x-auto border border-white/5">
-                        <pre class="font-mono text-lime-400 text-xs leading-relaxed whitespace-pre-wrap"><code>Analyze naming conventions across all tables and columns. Rename fields for consistency, fix casing (e.g. Title Case), and remove unnecessary prefixes. Ensure all DAX measures update accordingly. Show me the mapping of old names to new names for my approval before executing.</code></pre>
-                    </div>
-                </div>
-
-                <!-- Prompt 4 -->
-                <div class="bg-slate-900 p-8 rounded-3xl shadow-xl border border-slate-800 flex flex-col h-full relative group">
-                    <button onclick="utils.copyPrompt(this)" class="copy-btn absolute top-6 right-6 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 text-xs px-3 py-2 rounded-lg flex items-center gap-2 z-10 font-bold tracking-wide uppercase transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-                        <span class="btn-text">Kopírovat</span>
-                    </button>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center text-2xl">⚡</div>
-                        <h3 class="font-black text-white text-xl">4. Optimalizace DAX</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-6">Agent najde bottlenecky ve výkonu složitého DAXu a navrhne mnohem rychlejší variantu výpočtu.</p>
-                    <div class="bg-black/50 p-5 rounded-2xl flex-grow overflow-x-auto border border-white/5">
-                        <pre class="font-mono text-lime-400 text-xs leading-relaxed whitespace-pre-wrap"><code>Review the following DAX measure for performance bottlenecks. Suggest an optimized version using variables (VAR) and efficient filter context evaluation. Explain the performance improvements in your plan before outputting the final DAX.
-[VLOŽTE SVŮJ DAX ZDE]</code></pre>
-                    </div>
-                </div>
-
-                <!-- Prompt 5 -->
-                <div class="bg-slate-900 p-8 rounded-3xl shadow-xl border border-slate-800 flex flex-col h-full relative group md:col-span-1 lg:col-span-2">
-                    <button onclick="utils.copyPrompt(this)" class="copy-btn absolute top-6 right-6 bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 text-xs px-3 py-2 rounded-lg flex items-center gap-2 z-10 font-bold tracking-wide uppercase transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-                        <span class="btn-text">Kopírovat</span>
-                    </button>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center text-2xl">⭐</div>
-                        <h3 class="font-black text-white text-xl">5. Návrh datového modelu (Star Schema)</h3>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-6">Nechte AI navrhnout optimální Star Schema model ze surových dat. Výborné na začátku projektů, kdy agent identifikuje fakta, dimenze a klíče.</p>
-                    <div class="bg-black/50 p-5 rounded-2xl flex-grow overflow-x-auto border border-white/5">
-                        <pre class="font-mono text-lime-400 text-xs leading-relaxed whitespace-pre-wrap"><code>Analyze the following list of raw flat tables and their columns. Propose an optimal Star Schema design. Identify which tables should be Fact tables and which should be Dimensions. Suggest the necessary relationships (1-to-many) and surrogate keys. Present your structural plan for my approval.
-[VLOŽTE SEZNAM TABULEK/SLOUPCŮ]</code></pre>
-                    </div>
-                </div>
-
-            </div>
         </section>
 
         </div>
